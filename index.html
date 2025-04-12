@@ -3,13 +3,15 @@
 <head>
   <meta charset="UTF-8">
   <title>Nott MODZ</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <style>
     body {
       background: linear-gradient(to right, #1f1f2e, #2c003e);
       color: white;
       font-family: sans-serif;
-      text-align: center;
       margin: 0;
+      padding: 0;
+      text-align: center;
     }
     .menu {
       position: absolute;
@@ -17,44 +19,6 @@
       left: 20px;
       font-size: 30px;
       cursor: pointer;
-    }
-    .app-grid {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 10px;
-      padding: 20px;
-      margin-top: 60px;
-    }
-    .app-card {
-      background: #292946;
-      padding: 10px;
-      border-radius: 12px;
-      box-shadow: 0 4px 10px rgba(0,0,0,0.5);
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-    }
-    .app-card img {
-      width: 50px;
-      height: 50px;
-      margin-bottom: 5px;
-    }
-    .get-btn {
-      background: #ff66cc;
-      color: black;
-      padding: 12px 20px;
-      border: none;
-      border-radius: 25px;
-      font-weight: bold;
-      margin: 20px auto;
-      display: block;
-      cursor: pointer;
-      font-size: 18px;
-    }
-    .footer {
-      background: black;
-      padding: 20px;
-      font-size: 14px;
     }
     .popup {
       position: fixed;
@@ -73,6 +37,49 @@
       border: none;
       cursor: pointer;
       border-radius: 5px;
+    }
+    h1 {
+      margin-top: 60px;
+    }
+    .app-grid {
+      display: flex;
+      flex-direction: column;
+      gap: 15px;
+      padding: 20px;
+    }
+    .app-card {
+      background: #292946;
+      padding: 15px;
+      border-radius: 12px;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.5);
+      display: flex;
+      align-items: center;
+      justify-content: flex-start;
+      gap: 15px;
+    }
+    .app-card img {
+      width: 50px;
+      height: 50px;
+    }
+    .app-card span {
+      font-size: 18px;
+      font-weight: bold;
+    }
+    .get-btn {
+      background: #ff66cc;
+      color: black;
+      padding: 15px 25px;
+      border: none;
+      border-radius: 30px;
+      font-weight: bold;
+      font-size: 18px;
+      margin: 20px;
+      cursor: pointer;
+    }
+    .footer {
+      background: black;
+      padding: 20px;
+      font-size: 14px;
     }
   </style>
 </head>
