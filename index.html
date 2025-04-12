@@ -1,136 +1,124 @@
-<!DOCTYPE html><html lang="en">
+<!DOCTYPE html>
+<html lang="en">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>NOTTMODZ - Premium Apps Hub</title>
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap" rel="stylesheet">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>NOTTMODZ | Premium Apps Hub</title>
   <style>
     body {
       margin: 0;
       font-family: 'Poppins', sans-serif;
-      background: linear-gradient(135deg, #000000, #121212);
-      color: #fff;
-      overflow-x: hidden;
+      background: black;
+      color: white;
+      text-align: center;
     }
     header {
-      text-align: center;
-      padding: 60px 20px 20px;
-      background: #ff0000;
-      animation: fadeIn 2s ease;
+      background: linear-gradient(to right, black, #ffcc00, #00ff99);
+      padding: 20px;
+      font-size: 28px;
+      font-weight: bold;
+      animation: glow 2s infinite alternate;
     }
-    header h1 {
-      font-size: 3rem;
-      margin: 0;
+    @keyframes glow {
+      from { text-shadow: 0 0 10px #ffcc00; }
+      to { text-shadow: 0 0 30px #00ff99; }
     }
-    header p {
-      font-size: 1.2rem;
-      margin: 10px 0 0;
+    .animation-text {
+      font-size: 20px;
+      margin: 20px 0;
+      color: #00ff99;
+      animation: blink 1.2s infinite;
     }
-    .apps-section {
-      display: flex;
-      flex-wrap: wrap;
-      justify-content: center;
-      padding: 30px 10px;
+    @keyframes blink {
+      0%, 100% { opacity: 1; }
+      50% { opacity: 0.3; }
     }
-    .app-card {
-      background: #1f1f1f;
-      border-radius: 15px;
-      box-shadow: 0 4px 10px rgba(0,0,0,0.6);
-      margin: 15px;
-      padding: 15px;
-      text-align: center;
-      width: 150px;
-      transition: transform 0.3s ease, box-shadow 0.3s ease;
-    }
-    .app-card:hover {
-      transform: translateY(-5px);
-      box-shadow: 0 8px 20px rgba(0,0,0,0.8);
-    }
-    .app-card img {
+    .logo-section img {
       width: 80px;
+      margin: 10px;
       border-radius: 10px;
     }
-    .app-card p {
-      margin: 10px 0 0;
-      font-size: 1rem;
-    }
     .button {
-      display: inline-block;
-      margin: 20px auto;
+      background: #ffcc00;
+      color: black;
       padding: 15px 30px;
-      background: #ff0000;
-      color: #fff;
+      margin: 20px;
+      border: none;
+      font-size: 18px;
+      border-radius: 8px;
+      cursor: pointer;
       text-decoration: none;
-      border-radius: 30px;
-      font-size: 1.2rem;
-      transition: background 0.3s ease;
     }
     .button:hover {
-      background: #ff3333;
+      background: #00ff99;
+      color: black;
     }
-    .contacts {
-      text-align: center;
-      padding: 30px 10px;
+    .desc {
+      font-size: 18px;
+      margin: 30px 10px;
     }
-    .contacts a {
-      margin: 10px;
-      display: inline-block;
+    footer {
+      background: #222;
+      padding: 20px;
+      margin-top: 50px;
+      font-size: 14px;
+    }
+    .menu {
+      position: absolute;
+      top: 20px;
+      right: 20px;
+      font-size: 24px;
+      cursor: pointer;
+    }
+    .menu a {
+      display: block;
+      margin: 5px 0;
+      color: white;
       text-decoration: none;
-      color: #fff;
-      background: #1f1f1f;
-      padding: 10px 20px;
-      border-radius: 30px;
-      transition: background 0.3s ease;
-    }
-    .contacts a:hover {
-      background: #333;
-    }
-    .footer {
-      text-align: center;
-      padding: 15px;
-      background: #0d0d0d;
-      font-size: 0.9rem;
-      margin-top: 20px;
-    }
-    @keyframes fadeIn {
-      from {opacity: 0;}
-      to {opacity: 1;}
     }
   </style>
 </head>
-<body><header>
-  <h1>Welcome to NOTTMODZ</h1>
-  <p>Your Premium Apps Hub — 100% Free!</p>
-  <a class="button" href="https://t.me/noturjatin">Join Telegram</a>
-</header><section class="apps-section">
-  <div class="app-card">
+<body>
+
+  <div class="menu">
+    &#9776;
+    <a href="https://t.me/nottmodz">Telegram Group</a>
+    <a href="https://wa.me/919499473347">Contact Us</a>
+  </div>
+
+  <header>
+    Welcome to NOTTMODZ
+  </header>
+
+  <div class="animation-text">
+    Get All Apps Premium Version — For Free!
+  </div>
+
+  <div class="logo-section">
     <img src="https://upload.wikimedia.org/wikipedia/commons/0/08/Netflix_2015_logo.svg" alt="Netflix">
-    <p>Netflix Premium</p>
-  </div>
-  <div class="app-card">
     <img src="https://upload.wikimedia.org/wikipedia/commons/f/f1/Prime_Video.png" alt="Prime Video">
-    <p>Prime Video</p>
+    <img src="https://upload.wikimedia.org/wikipedia/commons/8/88/Telegram_logo.svg" alt="Telegram">
   </div>
-  <div class="app-card">
-    <img src="https://upload.wikimedia.org/wikipedia/commons/1/18/Disney%2B_Hotstar_logo.png" alt="Hotstar">
-    <p>Disney+ Hotstar</p>
+
+  <a class="button" href="https://t.me/nottmodz">Click Here — Get All OTT Apps Premium</a>
+
+  <div class="desc">
+    Unlock <strong>Netflix</strong>, <strong>Prime Video</strong>, <strong>Zee5</strong>, <strong>Hotstar</strong> and many more <br>
+    Get Editing Apps like <strong>Kinemaster Pro</strong>, <strong>PicsArt Gold</strong> — totally free! <br><br>
+    Join our Telegram channel for downloading these apps. <br>
+    No bugs, 100% safe, working mods. <span style="font-size:20px;">🔥✨🎉</span>
   </div>
-  <div class="app-card">
-    <img src="https://seeklogo.com/images/Z/zee5-logo-458B206AAD-seeklogo.com.png" alt="Zee5">
-    <p>Zee5 Premium</p>
-  </div>
-  <div class="app-card">
-    <img src="https://play-lh.googleusercontent.com/pQkHgVUsVTN_S7kwh28ykVfoCEN0z7LxyzKDn5XxhxL7sRKqzZo4PMBVXsfS5aXoaA" alt="Kinemaster">
-    <p>Kinemaster Pro</p>
-  </div>
-  <div class="app-card">
-    <img src="https://play-lh.googleusercontent.com/MQUeukSxE2xe50Tzw9uQWGWpZ6YG1ChcxrFAuo0xOsyjzAm8h1Hn0pVIT-AsW2N7Zw" alt="PicsArt Gold">
-    <p>PicsArt Gold</p>
-  </div>
-</section><div class="contacts">
-  <a href="https://api.whatsapp.com/send?phone=+919499473347">WhatsApp: +91 94994 73347</a>
-  <a href="https://www.instagram.com/noturjatin?igsh=azNnaW0ydzl1a240">Instagram: @noturjatin</a>
-</div><div class="footer">
-  &copy; 2025 NOTTMODZ. All rights reserved.
-</div></body>
+
+  <footer>
+    <p>Thanks for visiting us!</p>
+    <p>
+      Contact: <a href="https://wa.me/919499473347" style="color: #00ff99;">+91 9499473347</a> | 
+      <a href="https://www.instagram.com/noturjatin?igsh=azNnaW0ydzl1a240" style="color: #ffcc00;">Instagram</a>
+    </p>
+    <p>Join our Telegram for app download links — redirect to a Google Drive video too!</p>
+    <p>— NOTTMODZ TEAM</p>
+    <p>&copy; 2025</p>
+  </footer>
+
+</body>
 </html>
