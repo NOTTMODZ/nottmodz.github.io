@@ -1,141 +1,127 @@
 <!DOCTYPE html><html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>NOTTMODZ - Mods Beyond Limits</title>
-<style>
-  body {
-    margin: 0;
-    font-family: 'Arial', sans-serif;
-    background-color: #000;
-    color: #fff;
-  }
-  header {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    padding: 10px 20px;
-    background: #0f0;
-  }
-  .menu-btn {
-    font-size: 26px;
-    cursor: pointer;
-  }
-  .menu {
-    position: fixed;
-    top: 0;
-    left: -260px;
-    width: 260px;
-    height: 100%;
-    background: #111;
-    transition: left 0.3s ease;
-    padding: 20px;
-  }
-  .menu a {
-    color: #fff;
-    text-decoration: none;
-    display: block;
-    margin: 20px 0;
-  }
-  .menu.open {
-    left: 0;
-  }
-  .overlay {
-    display: none;
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: rgba(0,0,0,0.5);
-  }
-  .overlay.active {
-    display: block;
-  }
-  .tagline {
-    font-weight: bold;
-    color: #ff0;
-    padding: 10px;
-  }
-  .card-grid {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    gap: 15px;
-    padding: 15px;
-  }
-  .card {
-    background: #1a1a1a;
-    border-radius: 8px;
-    overflow: hidden;
-    text-align: center;
-    padding: 10px;
-  }
-  .card img {
-    width: 100%;
-    border-radius: 8px;
-  }
-  .card button {
-    margin-top: 10px;
-    background: #0f0;
-    color: #000;
-    border: none;
-    padding: 10px;
-    border-radius: 5px;
-    cursor: pointer;
-  }
-  footer {
-    text-align: center;
-    padding: 20px;
-    background: #0f0;
-    color: #000;
-  }
-</style>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Nott MODZ</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Poppins', sans-serif;
+      background: linear-gradient(135deg, #0f0c29, #302b63, #24243e);
+      color: white;
+      overflow-x: hidden;
+    }
+    header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 20px;
+    }
+    .logo {
+      font-size: 28px;
+      font-weight: bold;
+    }
+    .menu {
+      cursor: pointer;
+      font-size: 24px;
+    }
+    .menu-items {
+      display: none;
+      flex-direction: column;
+      background: rgba(0,0,0,0.8);
+      position: absolute;
+      top: 60px;
+      left: 0;
+      width: 100%;
+      padding: 20px;
+      animation: slideIn 0.3s ease forwards;
+    }
+    .menu-items a {
+      text-decoration: none;
+      color: white;
+      margin: 10px 0;
+      font-size: 18px;
+    }
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 20px;
+      padding: 20px;
+      text-align: center;
+    }
+    .grid img {
+      width: 100%;
+      border-radius: 15px;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.6);
+    }
+    .button {
+      background: violet;
+      padding: 12px 25px;
+      border: none;
+      border-radius: 25px;
+      font-size: 18px;
+      margin: 20px auto;
+      display: block;
+      cursor: pointer;
+      color: black;
+      font-weight: bold;
+    }
+    .footer {
+      text-align: center;
+      padding: 30px 20px;
+      font-size: 14px;
+      background: black;
+    }
+    .popup {
+      display: none;
+      position: fixed;
+      bottom: 20px;
+      right: 20px;
+      background: violet;
+      padding: 20px;
+      border-radius: 10px;
+      animation: popUp 0.5s ease forwards;
+    }
+    @keyframes slideIn {
+      from { transform: translateX(-100%); opacity: 0; }
+      to { transform: translateX(0); opacity: 1; }
+    }
+    @keyframes popUp {
+      from { transform: translateY(50px); opacity: 0; }
+      to { transform: translateY(0); opacity: 1; }
+    }
+  </style>
 </head>
 <body>
-<header>
-  <div class="menu-btn" onclick="toggleMenu()">☰</div>
-  <h1>NOTTMODZ</h1>
-</header><div class="menu" id="sideMenu">
-  <a href="https://wa.me/919499473347">Contact Us (WhatsApp)</a>
-  <a href="https://www.instagram.com/noturjatin">Instagram</a>
-  <a href="https://t.me/nottmodz">Telegram</a>
-</div>
-<div class="overlay" id="overlay" onclick="toggleMenu()"></div><div class="tagline">I AM MADS Mods beyond limits ~ Rao Jatin</div><div class="card-grid">
-  <div class="card">
-    <img src="netflix.png" alt="Netflix">
-    <button onclick="downloadApp()">Download</button>
-  </div>
-  <div class="card">
-    <img src="prime.png" alt="Prime Video">
-    <button onclick="downloadApp()">Download</button>
-  </div>
-  <div class="card">
-    <img src="hotstar.png" alt="Hotstar">
-    <button onclick="downloadApp()">Download</button>
-  </div>
-  <div class="card">
-    <img src="zee5.png" alt="Zee5">
-    <button onclick="downloadApp()">Download</button>
-  </div>
-  <div class="card">
-    <img src="capcut.png" alt="Capcut">
-    <button onclick="downloadApp()">Download</button>
-  </div>
-  <div class="card">
-    <img src="premiere.png" alt="Premiere Pro">
-    <button onclick="downloadApp()">Download</button>
-  </div>
-</div><footer>
-  2024 © NOTTMODZ | Mods beyond limits
-</footer><script>
-function toggleMenu() {
-  document.getElementById('sideMenu').classList.toggle('open');
-  document.getElementById('overlay').classList.toggle('active');
-}
+  <header>
+    <div class="logo">Nott MODZ</div>
+    <div class="menu" onclick="toggleMenu()">&#9776;</div>
+  </header>  <div class="menu-items" id="menuItems">
+    <a href="https://wa.me/919499473347">Support (WhatsApp)</a>
+    <a href="https://t.me/nottmodz">Join Telegram</a>
+  </div>  <div class="grid">
+    <img src="your-netflix-logo.png" alt="Netflix">
+    <img src="your-capcut-logo.png" alt="Capcut">
+    <img src="your-spotify-logo.png" alt="Spotify">
+    <img src="your-prime-logo.png" alt="Prime Video">
+    <img src="your-zee5-logo.png" alt="Zee5">
+    <img src="your-telegram-logo.png" alt="Telegram">
+  </div><button class="button" onclick="window.location.href='https://t.me/nottmodz'">GET ALL APPS PREMIUM</button>
 
-function downloadApp() {
-  alert("Download your app from here");
-  window.location.href = "https://t.me/nottmodz";
-}
-</script></body>
+  <div class="footer">
+    <strong>GET ALL APP PREMIUM UNLOCK 🔓</strong><br><br>
+    Welcome to NOTTMODZ — your one-stop hub for premium modded apps including Netflix, Prime Video, Spotify, Zee5, Capcut, and more! Here, we make sure you get 100% working, virus-free, premium unlocked apps for your Android device. Enjoy ad-free, uninterrupted content and exclusive features without paying a dime. Our apps are updated regularly, completely safe, and tested by our community. Join our fast-growing Telegram family for instant updates and 24/7 support. Whether it's movies, music, or tools — we've got you covered. Unleash the full power of your apps now!
+  </div>  <div class="popup" id="popup">
+    <strong>Join Nottmodz Now Modded By Rao Jatin!</strong>
+    <button onclick="window.location.href='https://t.me/nottmodz'">Join Now</button>
+  </div>  <script>
+    function toggleMenu() {
+      const menu = document.getElementById('menuItems');
+      menu.style.display = menu.style.display === 'flex' ? 'none' : 'flex';
+    }
+
+    setTimeout(() => {
+      document.getElementById('popup').style.display = 'block';
+    }, 5000);
+  </script></body>
 </html>
