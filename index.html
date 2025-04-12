@@ -31,6 +31,7 @@
       background: black;
       padding: 30px;
       transition: 0.4s ease;
+      z-index: 999;
     }
     .menu a {
       display: block;
@@ -77,6 +78,13 @@
       text-align: center;
       font-size: 18px;
     }
+    .bold-line {
+      text-align: center;
+      font-size: 20px;
+      font-weight: bold;
+      color: yellow;
+      margin: 10px 20px 30px 20px;
+    }
     footer {
       background: #222;
       padding: 20px;
@@ -97,7 +105,7 @@
       padding: 30px;
       border-radius: 20px;
       text-align: center;
-      z-index: 999;
+      z-index: 9999;
     }
     .popup button {
       position: absolute;
@@ -108,6 +116,18 @@
       color: white;
       font-size: 20px;
       cursor: pointer;
+    }
+    .overlay {
+      display: none;
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      z-index: 500;
+    }
+    .show-overlay {
+      display: block;
     }
   </style>
 </head>
@@ -122,6 +142,8 @@
   <a href="https://www.instagram.com/noturjatin">Instagram</a>
   <a href="https://t.me/nottmodz">Telegram Channel</a>
 </div>
+
+<div class="overlay" id="overlay" onclick="closeMenu()"></div>
 
 <div class="title">
   Welcome to <span class="highlight">NOTTMODZ</span>
@@ -148,31 +170,9 @@
   No bugs, 100% working mods. <span style="font-size: 20px;">🔥✨🎉</span>
 </div>
 
-<footer>
-  <div>Thanks for visiting us!</div>
-  <div>Contact: <a href="https://wa.me/919499473347">+91 94994 73447</a> | <a href="https://www.instagram.com/noturjatin">Instagram</a></div>
-  <div>Join our Telegram for download links & a Google Drive guide too!</div>
-  <div style="margin-top: 10px;">— NOTTMODZ TEAM</div>
-  <div>© 2025</div>
-</footer>
-
-<div class="popup" id="popup" onclick="window.location.href='https://t.me/nottmodz'">
-  <button onclick="event.stopPropagation(); closePopup()">×</button>
-  <h3>Join Nottmodz Now!</h3>
-  <p>Modded by Rao Jatin</p>
+<div class="bold-line">
+  I AM MADS — Mods beyond limits ~ Rao Jatin
 </div>
 
-<script>
-  function toggleMenu() {
-    document.getElementById("menu").classList.toggle("show-menu");
-  }
-  function closePopup() {
-    document.getElementById("popup").style.display = "none";
-  }
-  setTimeout(() => {
-    document.getElementById("popup").style.display = "block";
-  }, 5000);
-</script>
-
-</body>
-</html>
+<footer>
+  <div>Thanks for visiting us!</div>
