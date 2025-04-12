@@ -1,127 +1,131 @@
-<!DOCTYPE html><html lang="en">
+<!DOCTYPE html>
+<html lang="en">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Nott MODZ</title>
   <style>
     body {
-      margin: 0;
-      font-family: 'Poppins', sans-serif;
-      background: linear-gradient(135deg, #0f0c29, #302b63, #24243e);
+      background: linear-gradient(to right, #1f1f2e, #2c003e);
       color: white;
-      overflow-x: hidden;
-    }
-    header {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      padding: 20px;
-    }
-    .logo {
-      font-size: 28px;
-      font-weight: bold;
+      font-family: sans-serif;
+      text-align: center;
+      margin: 0;
     }
     .menu {
-      cursor: pointer;
-      font-size: 24px;
-    }
-    .menu-items {
-      display: none;
-      flex-direction: column;
-      background: rgba(0,0,0,0.8);
       position: absolute;
-      top: 60px;
-      left: 0;
-      width: 100%;
-      padding: 20px;
-      animation: slideIn 0.3s ease forwards;
+      top: 20px;
+      left: 20px;
+      font-size: 30px;
+      cursor: pointer;
     }
-    .menu-items a {
-      text-decoration: none;
-      color: white;
-      margin: 10px 0;
-      font-size: 18px;
-    }
-    .grid {
+    .app-grid {
       display: grid;
       grid-template-columns: repeat(3, 1fr);
-      gap: 20px;
+      gap: 10px;
       padding: 20px;
-      text-align: center;
+      margin-top: 60px;
     }
-    .grid img {
-      width: 100%;
-      border-radius: 15px;
-      box-shadow: 0 4px 10px rgba(0,0,0,0.6);
+    .app-card {
+      background: #292946;
+      padding: 10px;
+      border-radius: 12px;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.5);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
     }
-    .button {
-      background: violet;
-      padding: 12px 25px;
+    .app-card img {
+      width: 50px;
+      height: 50px;
+      margin-bottom: 5px;
+    }
+    .get-btn {
+      background: #ff66cc;
+      color: black;
+      padding: 12px 20px;
       border: none;
       border-radius: 25px;
-      font-size: 18px;
+      font-weight: bold;
       margin: 20px auto;
       display: block;
       cursor: pointer;
-      color: black;
-      font-weight: bold;
+      font-size: 18px;
     }
     .footer {
-      text-align: center;
-      padding: 30px 20px;
-      font-size: 14px;
       background: black;
+      padding: 20px;
+      font-size: 14px;
     }
     .popup {
-      display: none;
       position: fixed;
-      bottom: 20px;
+      top: 20px;
       right: 20px;
-      background: violet;
-      padding: 20px;
+      background: #ff66cc;
+      padding: 12px;
       border-radius: 10px;
-      animation: popUp 0.5s ease forwards;
+      z-index: 999;
+      display: none;
     }
-    @keyframes slideIn {
-      from { transform: translateX(-100%); opacity: 0; }
-      to { transform: translateX(0); opacity: 1; }
-    }
-    @keyframes popUp {
-      from { transform: translateY(50px); opacity: 0; }
-      to { transform: translateY(0); opacity: 1; }
+    .popup button {
+      margin-top: 8px;
+      padding: 6px 10px;
+      background: white;
+      border: none;
+      cursor: pointer;
+      border-radius: 5px;
     }
   </style>
 </head>
 <body>
-  <header>
-    <div class="logo">Nott MODZ</div>
-    <div class="menu" onclick="toggleMenu()">&#9776;</div>
-  </header>  <div class="menu-items" id="menuItems">
-    <a href="https://wa.me/919499473347">Support (WhatsApp)</a>
-    <a href="https://t.me/nottmodz">Join Telegram</a>
-  </div>  <div class="grid">
-    <img src="your-netflix-logo.png" alt="Netflix">
-    <img src="your-capcut-logo.png" alt="Capcut">
-    <img src="your-spotify-logo.png" alt="Spotify">
-    <img src="your-prime-logo.png" alt="Prime Video">
-    <img src="your-zee5-logo.png" alt="Zee5">
-    <img src="your-telegram-logo.png" alt="Telegram">
-  </div><button class="button" onclick="window.location.href='https://t.me/nottmodz'">GET ALL APPS PREMIUM</button>
 
-  <div class="footer">
-    <strong>GET ALL APP PREMIUM UNLOCK 🔓</strong><br><br>
-    Welcome to NOTTMODZ — your one-stop hub for premium modded apps including Netflix, Prime Video, Spotify, Zee5, Capcut, and more! Here, we make sure you get 100% working, virus-free, premium unlocked apps for your Android device. Enjoy ad-free, uninterrupted content and exclusive features without paying a dime. Our apps are updated regularly, completely safe, and tested by our community. Join our fast-growing Telegram family for instant updates and 24/7 support. Whether it's movies, music, or tools — we've got you covered. Unleash the full power of your apps now!
-  </div>  <div class="popup" id="popup">
-    <strong>Join Nottmodz Now Modded By Rao Jatin!</strong>
-    <button onclick="window.location.href='https://t.me/nottmodz'">Join Now</button>
-  </div>  <script>
-    function toggleMenu() {
-      const menu = document.getElementById('menuItems');
-      menu.style.display = menu.style.display === 'flex' ? 'none' : 'flex';
-    }
+<div class="menu" onclick="alert('1. WhatsApp: +919499473347\n2. Join Telegram: https://t.me/nottmodz')">&#9776;</div>
 
-    setTimeout(() => {
-      document.getElementById('popup').style.display = 'block';
-    }, 5000);
-  </script></body>
+<h1>Nott MODZ</h1>
+
+<div class="app-grid">
+  <div class="app-card">
+    <img src="https://upload.wikimedia.org/wikipedia/commons/0/08/Netflix_2015_logo.svg" alt="Netflix">
+    <span>Netflix</span>
+  </div>
+  <div class="app-card">
+    <img src="https://seeklogo.com/images/C/capcut-logo-0DCDF901C6-seeklogo.com.png" alt="Capcut">
+    <span>Capcut</span>
+  </div>
+  <div class="app-card">
+    <img src="https://storage.googleapis.com/pr-newsroom-wp/1/2022/11/Spotify_Logo_RGB_White.png" alt="Spotify">
+    <span>Spotify</span>
+  </div>
+  <div class="app-card">
+    <img src="https://upload.wikimedia.org/wikipedia/commons/f/f1/Prime_Video.png" alt="Prime Video">
+    <span>Prime Video</span>
+  </div>
+  <div class="app-card">
+    <img src="https://upload.wikimedia.org/wikipedia/commons/f/f1/ZEE5_official_logo.png" alt="Zee5">
+    <span>Zee5</span>
+  </div>
+  <div class="app-card">
+    <img src="https://upload.wikimedia.org/wikipedia/commons/8/82/Telegram_logo.svg" alt="Telegram">
+    <span>Telegram</span>
+  </div>
+</div>
+
+<button class="get-btn">GET ALL APPS PREMIUM</button>
+
+<div class="footer">
+  <strong>GET ALL APP PREMIUM UNLOCK 🔓</strong><br><br>
+  Welcome to NOTTMODZ — your one-stop hub for premium modded apps like Netflix, Prime Video, Spotify, Zee5, Capcut, and more! We ensure you get fully unlocked, virus-free, ad-free apps for your Android phone. No logins, no ads — just pure entertainment. Join our fast-growing Telegram family for instant updates, new app launches, and 24/7 support. Our collection is 100% safe, tested, and regularly updated. Watch premium movies, shows, music, and use tools for free. Unleash the full power of your apps now with us. Your ultimate premium unlocked app zone!
+</div>
+
+<div id="popup" class="popup">
+  <strong>Join Nottmodz Now Modded By Rao Jatin!</strong>
+  <br><button onclick="window.location.href='https://t.me/nottmodz'">Join Now</button>
+</div>
+
+<script>
+  setTimeout(() => {
+    document.getElementById('popup').style.display = 'block';
+  }, 5000);
+</script>
+
+</body>
 </html>
