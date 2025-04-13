@@ -1,15 +1,22 @@
-<!DOCTYPE html><html lang="en">
+<!DOCTYPE html>
+<html lang="en">
 <head>
   <meta charset="UTF-8">
   <title>Nott MODZ - Free Premium Modded Apps</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">  <!-- SEO Meta Tags -->  <meta name="description" content="Nott MODZ — Download free premium modded apps like Netflix, Prime Video, Spotify, Hotstar, and more. 100% working and virus-free!">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!-- SEO Meta Tags -->
+  <meta name="description" content="Nott MODZ — Download free premium modded apps like Netflix, Prime Video, Spotify, Hotstar, and more. 100% working and virus-free!">
   <meta name="keywords" content="Nottmodz, mod apps, premium unlocked apps, Netflix mod, Spotify mod, Prime Video mod, free download">
   <meta name="author" content="Nottmodz Team">
-  <meta name="google-site-verification" content="aLhqFNBb4vJwxRTORi76_uBfY30KVjKL-POvaNpWoew" />  <!-- Open Graph (for social media) -->  <meta property="og:title" content="Nott MODZ - Free Premium Modded Apps">
+  <meta name="google-site-verification" content="aLhqFNBb4vJwxRTORi76_uBfY30KVjKL-POvaNpWoew" />
+  <!-- Open Graph -->
+  <meta property="og:title" content="Nott MODZ - Free Premium Modded Apps">
   <meta property="og:description" content="Download premium unlocked apps absolutely free! Netflix, Prime Video, Hotstar, and more.">
-  <meta property="og:image" content="logo.png">
+  <meta property="og:image" content="https://nottmodz.github.io/logo.png">
   <meta property="og:url" content="https://nottmodz.github.io/">
-  <meta property="og:type" content="website">  <link rel="icon" href="logo.png" type="image/png">  <style>
+  <meta property="og:type" content="website">
+  <link rel="icon" href="logo.png" type="image/png">
+  <style>
     body {
       background: linear-gradient(to right, #1f1f2e, #2c003e);
       color: white;
@@ -25,6 +32,10 @@
       font-size: 30px;
       cursor: pointer;
       z-index: 1000;
+      transition: transform 0.3s ease;
+    }
+    .menu:hover {
+      transform: rotate(90deg);
     }
     .menu-panel {
       position: fixed;
@@ -65,6 +76,10 @@
       font-weight: bold;
       box-shadow: 0 4px 10px rgba(0,0,0,0.5);
       cursor: pointer;
+      transition: transform 0.3s ease;
+    }
+    .app-card:hover {
+      transform: scale(1.05);
     }
     .get-btn {
       background: #ff66cc;
@@ -101,51 +116,92 @@
       width: 35px;
       height: 35px;
     }
-  </style></head>
+    #popup {
+      display: none;
+      position: fixed;
+      top: 20px;
+      left: 50%;
+      transform: translateX(-50%);
+      background: #ff66cc;
+      padding: 15px 30px;
+      border-radius: 30px;
+      color: black;
+      font-weight: bold;
+      z-index: 9999;
+      box-shadow: 0 0 10px rgba(0,0,0,0.5);
+      cursor: pointer;
+    }
+    #popup span {
+      margin-left: 10px;
+      font-weight: bold;
+      cursor: pointer;
+    }
+  </style>
+</head>
 <body>
-  <div class="menu" onclick="toggleMenu()">&#9776;</div>
-  <div class="menu-panel" id="menuPanel">
-    <a href="#" onclick="showContactPopup()">Contact Support</a>
-    <a href="#" onclick="joinTelegram()">Join Telegram</a>
-    <a href="team.html">Nott Team</a>
-  </div>
-  <h1>Nott MODZ</h1>
-  <div class="app-grid">
-    <div class="app-card" onclick="redirectTelegram()">Netflix 🎥</div>
-    <div class="app-card" onclick="redirectTelegram()">Capcut ✂️</div>
-    <div class="app-card" onclick="redirectTelegram()">Spotify 🎵</div>
-    <div class="app-card" onclick="redirectTelegram()">Prime Video 🍿</div>
-    <div class="app-card" onclick="redirectTelegram()">Zee5 📺</div>
-    <div class="app-card" onclick="redirectTelegram()">Telegram ✈️</div>
-    <div class="app-card" onclick="redirectTelegram()">Jio Cinema 🎬</div>
-    <div class="app-card" onclick="redirectTelegram()">Hotstar 🦁</div>
-    <div class="app-card" onclick="redirectTelegram()">Alt Balaji 🎭</div>
-    <div class="app-card" onclick="redirectTelegram()">Sony LIV 📱</div>
-  </div>
-  <button class="get-btn" onclick="window.location.href='https://t.me/nottmodz'">GET ALL APPS PREMIUM</button>  <div class="footer">
-    <strong>GET ALL APP PREMIUM UNLOCK 🔓</strong><br><br>
-    Welcome to NOTTMODZ 🎉 — your one-stop hub for premium modded apps like Netflix 🎥, Prime Video 🍿, Spotify 🎵, Zee5 📺, Capcut ✂️, Jio Cinema 🎬, Hotstar 🦁, Alt Balaji 🎭, Sony LIV 📱 and more!<br><br>
-    <strong>© 2024 Team Nottmodz. All rights reserved.</strong>
-  </div>
-  <div class="floating-whatsapp" onclick="window.location.href='https://wa.me/919499473347'">
-    <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" alt="WhatsApp">
-  </div>  <script>
-    function toggleMenu() {
-      const menu = document.getElementById('menuPanel');
-      if (menu.style.left === '0px') {
-        menu.style.left = '-200px';
-      } else {
-        menu.style.left = '0px';
-      }
-    }
-    function redirectTelegram() {
-      window.location.href = 'https://t.me/nottmodz';
-    }
-    function joinTelegram() {
-      window.location.href = 'https://t.me/nottmodz';
-    }
-    function showContactPopup() {
-      window.location.href = 'https://wa.me/919499473347';
-    }
-  </script></body>
+
+<div class="menu" onclick="toggleMenu()">&#9776;</div>
+
+<div class="menu-panel" id="menuPanel">
+  <a href="#" onclick="showContactPopup()">Contact Support</a>
+  <a href="#" onclick="joinTelegram()">Join Telegram</a>
+  <a href="team.html">Nott Team</a>
+</div>
+
+<h1>Nott MODZ</h1>
+
+<div class="app-grid">
+  <div class="app-card" onclick="redirectTelegram()">Netflix 🎥</div>
+  <div class="app-card" onclick="redirectTelegram()">Capcut ✂️</div>
+  <div class="app-card" onclick="redirectTelegram()">Spotify 🎵</div>
+  <div class="app-card" onclick="redirectTelegram()">Prime Video 🍿</div>
+  <div class="app-card" onclick="redirectTelegram()">Zee5 📺</div>
+  <div class="app-card" onclick="redirectTelegram()">Telegram ✈️</div>
+  <div class="app-card" onclick="redirectTelegram()">Jio Cinema 🎬</div>
+  <div class="app-card" onclick="redirectTelegram()">Hotstar 🦁</div>
+  <div class="app-card" onclick="redirectTelegram()">Alt Balaji 🎭</div>
+  <div class="app-card" onclick="redirectTelegram()">Sony LIV 📱</div>
+</div>
+
+<button class="get-btn" onclick="window.location.href='https://t.me/nottmodz'">GET ALL APPS PREMIUM</button>
+
+<div class="footer">
+  <strong>GET ALL APP PREMIUM UNLOCK 🔓</strong><br><br>
+  Welcome to NOTTMODZ 🎉 — your one-stop hub for premium modded apps like Netflix 🎥, Prime Video 🍿, Spotify 🎵, Zee5 📺, Capcut ✂️, Jio Cinema 🎬, Hotstar 🦁, Alt Balaji 🎭, Sony LIV 📱 and more!  
+  Get them absolutely FREE with 100% working, virus-free, and ad-free experience. Download, enjoy and support us!  
+  <br><br><strong>© 2024 Team Nottmodz. All rights reserved.</strong>
+</div>
+
+<div class="floating-whatsapp" onclick="window.location.href='https://wa.me/919499473347'">
+  <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" alt="WhatsApp">
+</div>
+
+<div id="popup" onclick="window.location.href='https://t.me/nottmodz'">
+  Join Nottmodz Now — Modded By Rao Jatin! <span onclick="closePopup()">❌</span>
+</div>
+
+<script>
+  function toggleMenu() {
+    const menu = document.getElementById('menuPanel');
+    menu.style.left = (menu.style.left === '0px') ? '-200px' : '0px';
+  }
+  function redirectTelegram() {
+    window.location.href = 'https://t.me/nottmodz';
+  }
+  function joinTelegram() {
+    window.location.href = 'https://t.me/nottmodz';
+  }
+  function showContactPopup() {
+    window.location.href = 'https://wa.me/919499473347';
+  }
+  function closePopup() {
+    document.getElementById('popup').style.display = 'none';
+    event.stopPropagation();
+  }
+  setTimeout(function() {
+    document.getElementById('popup').style.display = 'block';
+  }, 5000);
+</script>
+
+</body>
 </html>
