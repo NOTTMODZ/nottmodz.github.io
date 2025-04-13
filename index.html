@@ -2,47 +2,51 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>Nott MODZ</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="google-site-verification" content="aLhqFNBb4vJwxRTORi76_uBfY30KVjKL-POvaNpWoew" />
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>NottModz Website</title>
   <style>
     body {
-      background: linear-gradient(to right, #1f1f2e, #2c003e);
-      color: white;
-      font-family: sans-serif;
       margin: 0;
-      padding: 0;
-      text-align: center;
+      font-family: Arial, sans-serif;
+      background: #121212;
+      color: white;
+      overflow-x: hidden;
+      transition: all 0.3s ease;
     }
-    .menu {
-      position: absolute;
-      top: 20px;
-      left: 20px;
-      font-size: 30px;
+
+    header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      background: #1f1f1f;
+      padding: 15px 20px;
+    }
+
+    .menu-btn {
+      font-size: 28px;
       cursor: pointer;
-      z-index: 1000;
     }
-    .menu-panel {
+
+    #menuPanel {
       position: fixed;
       top: 0;
       left: -200px;
       width: 200px;
       height: 100%;
-      background: #333;
-      padding-top: 60px;
-      transition: left 0.4s ease;
-      z-index: 999;
+      background: #2c2c2c;
+      transition: all 0.3s ease;
+      padding: 20px;
+      z-index: 1000;
     }
-    .menu-panel a {
+
+    #menuPanel a {
       display: block;
-      padding: 15px;
+      margin: 15px 0;
       color: white;
       text-decoration: none;
       font-size: 18px;
     }
-    .menu-panel a:hover {
-      background: #555;
-    }
+
     .popup {
       position: fixed;
       top: 20px;
@@ -52,133 +56,116 @@
       border-radius: 10px;
       z-index: 999;
       display: none;
+      transition: all 0.4s ease;
+      max-width: 250px;
     }
-    .popup button {
-      margin-top: 8px;
-      padding: 6px 10px;
-      background: white;
-      border: none;
-      cursor: pointer;
-      border-radius: 5px;
+
+    .menu-open .popup {
+      right: 200px;
+      max-width: calc(100% - 200px - 40px);
     }
-    h1 {
-      margin-top: 60px;
-    }
-    .app-grid {
-      display: flex;
-      flex-direction: column;
-      gap: 15px;
-      padding: 20px;
-    }
-    .app-card {
-      background: white;
-      color: black;
-      padding: 20px;
-      border-radius: 12px;
-      font-size: 22px;
-      font-weight: bold;
-      box-shadow: 0 4px 10px rgba(0,0,0,0.5);
-    }
-    .get-btn {
+
+    .sprinkle {
+      position: fixed;
+      width: 10px;
+      height: 10px;
       background: #ff66cc;
-      color: black;
-      padding: 15px 25px;
+      border-radius: 50%;
+      animation: sprinkle 1.2s ease-out forwards;
+      z-index: 2000;
+    }
+
+    @keyframes sprinkle {
+      0% {
+        transform: translate(0, 0) scale(1);
+        opacity: 1;
+      }
+      100% {
+        transform: translate(var(--x), var(--y)) scale(0.2);
+        opacity: 0;
+      }
+    }
+
+    .button {
+      background: #ff66cc;
+      color: white;
       border: none;
-      border-radius: 30px;
-      font-weight: bold;
+      padding: 12px 20px;
+      border-radius: 6px;
       font-size: 18px;
-      margin: 20px;
       cursor: pointer;
+      margin: 30px auto;
+      display: block;
     }
-    .footer {
-      background: black;
-      padding: 20px;
-      font-size: 14px;
-    }
-    .contact-popup {
+
+    #contactPopup {
       position: fixed;
       top: 50%;
       left: 50%;
       transform: translate(-50%, -50%);
-      background: #ff66cc;
+      background: #222;
+      color: white;
       padding: 20px;
-      border-radius: 12px;
+      border-radius: 10px;
       display: none;
-      z-index: 1000;
+      z-index: 1500;
+      text-align: center;
     }
-    .contact-popup button {
+
+    #contactPopup a {
+      color: #ff66cc;
+      text-decoration: none;
       display: block;
-      margin: 10px auto;
-      padding: 8px 14px;
-      border: none;
-      border-radius: 6px;
-      cursor: pointer;
-      font-weight: bold;
+      margin: 10px 0;
+      font-size: 18px;
     }
-    .sprinkle {
-      position: fixed;
-      width: 8px;
-      height: 8px;
+
+    .close-btn {
       background: #ff66cc;
-      border-radius: 50%;
-      animation: sprinkle 1s ease-out forwards;
-      z-index: 2000;
-    }
-    @keyframes sprinkle {
-      to {
-        transform: translate(var(--x), var(--y)) scale(0);
-        opacity: 0;
-      }
+      border: none;
+      color: white;
+      padding: 8px 12px;
+      border-radius: 6px;
+      margin-top: 10px;
+      cursor: pointer;
     }
   </style>
 </head>
 <body>
 
-<div class="menu" onclick="toggleMenu()">&#9776;</div>
+<header>
+  <div class="menu-btn" onclick="toggleMenu()">☰</div>
+  <h1>NottModz</h1>
+</header>
 
-<div class="menu-panel" id="menuPanel">
+<div id="menuPanel">
   <a href="#" onclick="showContactPopup()">Contact Us</a>
-  <a href="#" onclick="joinTelegram()">Join Telegram</a>
-</div>
-
-<h1>Nott MODZ</h1>
-
-<div class="app-grid">
-  <div class="app-card">Netflix 🎥</div>
-  <div class="app-card">Capcut ✂️</div>
-  <div class="app-card">Spotify 🎵</div>
-  <div class="app-card">Prime Video 🍿</div>
-  <div class="app-card">Zee5 📺</div>
-  <div class="app-card">Telegram ✈️</div>
-</div>
-
-<button class="get-btn" onclick="window.location.href='https://t.me/nottmodz'">GET ALL APPS PREMIUM</button>
-
-<div class="footer">
-  <strong>GET ALL APP PREMIUM UNLOCK 🔓</strong><br><br>
-  Welcome to NOTTMODZ 🎉 — your one-stop hub for premium modded apps like Netflix 🎥, Prime Video 🍿, Spotify 🎵, Zee5 📺, Capcut ✂️, and more! We ensure you get fully unlocked, virus-free 🛡️, ad-free 🚫 apps for your Android phone 📱. No logins 🔑, no ads 🚫 — just pure entertainment 🎊. Join our fast-growing Telegram family ✈️ for instant updates, new app launches 🚀, and 24/7 support 🕑. Our collection is 100% safe ✅, tested, and regularly updated 🔄. Watch premium movies 🎬, shows 📺, music 🎶, and use tools 🛠️ for free. Unleash the full power of your apps now with us 💥. Your ultimate premium unlocked app zone!<br><br>
-  <strong>© 2024 Team Nottmodz. All rights reserved.</strong>
+  <a href="https://t.me/nottmodz" target="_blank">Join Telegram</a>
 </div>
 
 <div id="popup" class="popup">
-  <strong>Join Nottmodz Now Modded By Rao Jatin!</strong>
-  <br><button onclick="window.location.href='https://t.me/nottmodz'">Join Now</button>
+  Join NottModz Now! Modded by Rao Jatin!
 </div>
 
-<div id="contactPopup" class="contact-popup">
-  <strong>Contact Us via:</strong><br>
-  <button style="background:white;color:black;" onclick="window.location.href='https://wa.me/919499473347'">WhatsApp</button>
-  <button style="background:black;color:white;" onclick="window.location.href='https://www.instagram.com/noturjatin?igsh=azNnaW0ydzl1a240'">Instagram</button>
-  <button style="background:red;color:white;" onclick="closeContactPopup()">Close</button>
+<button class="button" onclick="joinTelegram()">Get All Apps Premium</button>
+
+<div id="contactPopup">
+  <h2>Contact Us</h2>
+  <a href="https://wa.me/919499473347" target="_blank">WhatsApp</a>
+  <a href="https://www.instagram.com/noturjatin" target="_blank">Instagram</a>
+  <button class="close-btn" onclick="closeContactPopup()">Close</button>
 </div>
 
 <script>
   function toggleMenu() {
     const menu = document.getElementById('menuPanel');
+    const body = document.body;
     if (menu.style.left === '0px') {
       menu.style.left = '-200px';
+      body.classList.remove('menu-open');
     } else {
       menu.style.left = '0px';
+      body.classList.add('menu-open');
     }
   }
 
@@ -202,17 +189,21 @@
   }
 
   function sprinkleEffect() {
-    for (let i = 0; i < 40; i++) {
+    const centerX = window.innerWidth / 2;
+    const centerY = window.innerHeight / 2;
+    for (let i = 0; i < 60; i++) {
       const s = document.createElement('div');
       s.className = 'sprinkle';
-      s.style.left = window.innerWidth/2 + 'px';
-      s.style.top = window.innerHeight/2 + 'px';
+      s.style.left = `${centerX}px`;
+      s.style.top = `${centerY}px`;
       const angle = Math.random() * 2 * Math.PI;
-      const distance = Math.random() * 200;
-      s.style.setProperty('--x', `${Math.cos(angle) * distance}px`);
-      s.style.setProperty('--y', `${Math.sin(angle) * distance}px`);
+      const distance = Math.random() * (window.innerWidth / 2);
+      const x = Math.cos(angle) * distance;
+      const y = Math.sin(angle) * distance + Math.random() * (window.innerHeight / 2);
+      s.style.setProperty('--x', `${x}px`);
+      s.style.setProperty('--y', `${y}px`);
       document.body.appendChild(s);
-      setTimeout(() => s.remove(), 1000);
+      setTimeout(() => s.remove(), 1200);
     }
   }
 </script>
