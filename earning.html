@@ -36,20 +36,37 @@
 </div>
 
 <script>
-let questions = ["What's your gender?", "What's your GF/BF name?", "Say 'Papa' to me for ₹50!"];
+let questions = [
+  "What's your gender?",
+  "What's your GF/BF name?",
+  "Say 'Papa' to me for ₹50!",
+  "Which city do you live in?",
+  "Favorite food ka naam likho!",
+  "Type 'Not Modz Op' for ₹100!",
+  "Tera favourite game kaunsa hai?",
+  "Apni age likho",
+  "Type 'Yoohoo' for ₹30 bonus!",
+  "Apni mummy ka naam likho (₹20)"
+];
 let currentQ = 0, earning = 0;
 
 function submitAnswer() {
-  let ans = document.getElementById("answerInput").value;
-  if(ans.trim() === "") { alert("Please type your answer!"); return; }
+  let ans = document.getElementById("answerInput").value.trim();
+  if(ans === "") { alert("Please type your answer!"); return; }
+
+  // Special bonus checks
   if(currentQ === 2 && ans.toLowerCase().includes("papa")) earning += 50;
+  else if(ans.toLowerCase() === "not modz op") earning += 100;
+  else if(ans.toLowerCase() === "yoohoo") earning += 30;
+  else if(currentQ === 9) earning += 20;
   else earning += 1;
 
   document.getElementById("earnings").innerText = "Earning: ₹" + earning;
   document.getElementById("answerInput").value = "";
-  if(currentQ < questions.length) {
-    document.getElementById("question").innerText = questions[currentQ];
+
+  if(currentQ < questions.length-1) {
     currentQ++;
+    document.getElementById("question").innerText = questions[currentQ];
   } else {
     document.getElementById("question").innerText = "All done!";
     document.getElementById("questionBox").style.display = "none";
