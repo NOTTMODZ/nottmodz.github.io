@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>95+ Earning App</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <style>
+    body { background: #e6f0ff; font-family: sans-serif; text-align: center; margin: 0; padding: 0; }
+    #walletBtn { position: fixed; top: 12px; left: 12px; padding: 10px 18px; background: #007bff; color: white; border: none; border-radius: 25px; cursor: pointer; }
+    #earnings { margin-top: 60px; font-size: 20px; font-weight: bold; }
+    #questionBox { background: white; margin: 20px auto; padding: 20px; border-radius: 12px; width: 90%; }
+    input[type="text"], input[type="number"] { padding: 12px; width: 85%; margin: 12px 0; border-radius: 10px; border: 1px solid #ccc; }
+    button { padding: 14px 20px; background: #28a745; color: white; border: none; border-radius: 10px; cursor: pointer; margin-top: 12px; width: 85%; }
+    #withdrawScreen { display: none; position: fixed; top:0; left:0; width:100%; height:100%; background: rgba(0,0,0,0.9); color: white; padding: 20px; }
+  </style>
+</head>
+<body>
+
+<button id="walletBtn">Wallet</button>
+<div id="earnings">Earning: ₹0</div>
+
+<div id="questionBox">
+  <h3 id="question">What's your name?</h3>
+  <input type="text" id="answerInput" placeholder="Type your answer">
+  <button onclick="submitAnswer()">Submit</button>
+</div>
+
+<div id="withdrawScreen">
+  <h2>Your Wallet: ₹<span id="finalEarning">0</span></h2>
+  <p>Minimum Withdrawal ₹20</p>
+  <input type="text" id="upiId" placeholder="Enter your UPI ID">
+  <input type="number" id="withdrawAmt" placeholder="Enter Amount">
+  <button onclick="withdrawMoney()">Payout</button>
+  <p id="withdrawMsg"></p>
+  <button onclick="closeWithdraw()">Close</button>
+</div>
+
+<script>
+let questions = ["What's your gender?", "What's your GF/BF name?", "Say 'Papa' to me for ₹50!"];
+let currentQ = 0, earning = 0;
+
+function submitAnswer() {
+  let ans = document.getElementById("answerInput").value;
+  if(ans.trim() === "") { alert("Please type your answer!"); return; }
+  if(currentQ === 2 && ans.toLowerCase().includes("papa")) earning += 50;
+  else earning += 1;
+
+  document.getElementById("earnings").innerText = "Earning: ₹" + earning;
+  document.getElementById("answerInput").value = "";
+  if(currentQ < questions.length) {
+    document.getElementById("question").innerText = questions[currentQ];
+    currentQ++;
+  } else {
+    document.getElementById("question").innerText = "All done!";
+    document.getElementById("questionBox").style.display = "none";
+  }
+}
+
+document.getElementById("walletBtn").onclick = function(){
+  document.getElementById("withdrawScreen").style.display = 'block';
+  document.getElementById("finalEarning").innerText = earning;
+}
+function closeWithdraw(){
+  document.getElementById("withdrawScreen").style.display = 'none';
+}
+function withdrawMoney(){
+  let upi = document.getElementById("upiId").value;
+  let amt = Number(document.getElementById("withdrawAmt").value);
+  if(amt < 20){ document.getElementById("withdrawMsg").innerText = "Minimum ₹20!"; return; }
+  if(amt > earning){ document.getElementById("withdrawMsg").innerText = "Not enough balance!"; return; }
+  earning -= amt;
+  document.getElementById("earnings").innerText = "Earning: ₹" + earning;
+  document.getElementById("withdrawMsg").innerText = "✅ Credited! (Not really bro — chill kar 😂)";
+  document.getElementById("finalEarning").innerText = earning;
+}
+</script>
+
+</body>
+</html>
