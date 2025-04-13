@@ -20,6 +20,28 @@
       left: 20px;
       font-size: 30px;
       cursor: pointer;
+      z-index: 1000;
+    }
+    .menu-panel {
+      position: fixed;
+      top: 0;
+      left: -200px;
+      width: 200px;
+      height: 100%;
+      background: #333;
+      padding-top: 60px;
+      transition: left 0.4s ease;
+      z-index: 999;
+    }
+    .menu-panel a {
+      display: block;
+      padding: 15px;
+      color: white;
+      text-decoration: none;
+      font-size: 18px;
+    }
+    .menu-panel a:hover {
+      background: #555;
     }
     .popup {
       position: fixed;
@@ -73,28 +95,69 @@
       padding: 20px;
       font-size: 14px;
     }
+    .contact-popup {
+      position: fixed;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      background: #ff66cc;
+      padding: 20px;
+      border-radius: 12px;
+      display: none;
+      z-index: 1000;
+    }
+    .contact-popup button {
+      display: block;
+      margin: 10px auto;
+      padding: 8px 14px;
+      border: none;
+      border-radius: 6px;
+      cursor: pointer;
+      font-weight: bold;
+    }
+    .sprinkle {
+      position: fixed;
+      width: 8px;
+      height: 8px;
+      background: #ff66cc;
+      border-radius: 50%;
+      animation: sprinkle 1s ease-out forwards;
+      z-index: 2000;
+    }
+    @keyframes sprinkle {
+      to {
+        transform: translate(var(--x), var(--y)) scale(0);
+        opacity: 0;
+      }
+    }
   </style>
 </head>
 <body>
 
-<div class="menu" onclick="alert('1. WhatsApp: +919499473347\n2. Join Telegram: https://t.me/nottmodz')">&#9776;</div>
+<div class="menu" onclick="toggleMenu()">&#9776;</div>
+
+<div class="menu-panel" id="menuPanel">
+  <a href="#" onclick="showContactPopup()">Contact Us</a>
+  <a href="#" onclick="joinTelegram()">Join Telegram</a>
+</div>
 
 <h1>Nott MODZ</h1>
 
 <div class="app-grid">
-  <div class="app-card">Netflix</div>
-  <div class="app-card">Capcut</div>
-  <div class="app-card">Spotify</div>
-  <div class="app-card">Prime Video</div>
-  <div class="app-card">Zee5</div>
-  <div class="app-card">Telegram</div>
+  <div class="app-card">Netflix 🎥</div>
+  <div class="app-card">Capcut ✂️</div>
+  <div class="app-card">Spotify 🎵</div>
+  <div class="app-card">Prime Video 🍿</div>
+  <div class="app-card">Zee5 📺</div>
+  <div class="app-card">Telegram ✈️</div>
 </div>
 
 <button class="get-btn" onclick="window.location.href='https://t.me/nottmodz'">GET ALL APPS PREMIUM</button>
 
 <div class="footer">
   <strong>GET ALL APP PREMIUM UNLOCK 🔓</strong><br><br>
-  Welcome to NOTTMODZ — your one-stop hub for premium modded apps like Netflix, Prime Video, Spotify, Zee5, Capcut, and more! We ensure you get fully unlocked, virus-free, ad-free apps for your Android phone. No logins, no ads — just pure entertainment. Join our fast-growing Telegram family for instant updates, new app launches, and 24/7 support. Our collection is 100% safe, tested, and regularly updated. Watch premium movies, shows, music, and use tools for free. Unleash the full power of your apps now with us. Your ultimate premium unlocked app zone!
+  Welcome to NOTTMODZ 🎉 — your one-stop hub for premium modded apps like Netflix 🎥, Prime Video 🍿, Spotify 🎵, Zee5 📺, Capcut ✂️, and more! We ensure you get fully unlocked, virus-free 🛡️, ad-free 🚫 apps for your Android phone 📱. No logins 🔑, no ads 🚫 — just pure entertainment 🎊. Join our fast-growing Telegram family ✈️ for instant updates, new app launches 🚀, and 24/7 support 🕑. Our collection is 100% safe ✅, tested, and regularly updated 🔄. Watch premium movies 🎬, shows 📺, music 🎶, and use tools 🛠️ for free. Unleash the full power of your apps now with us 💥. Your ultimate premium unlocked app zone!<br><br>
+  <strong>© 2024 Team Nottmodz. All rights reserved.</strong>
 </div>
 
 <div id="popup" class="popup">
@@ -102,10 +165,56 @@
   <br><button onclick="window.location.href='https://t.me/nottmodz'">Join Now</button>
 </div>
 
+<div id="contactPopup" class="contact-popup">
+  <strong>Contact Us via:</strong><br>
+  <button style="background:white;color:black;" onclick="window.location.href='https://wa.me/919499473347'">WhatsApp</button>
+  <button style="background:black;color:white;" onclick="window.location.href='https://www.instagram.com/noturjatin?igsh=azNnaW0ydzl1a240'">Instagram</button>
+  <button style="background:red;color:white;" onclick="closeContactPopup()">Close</button>
+</div>
+
 <script>
+  function toggleMenu() {
+    const menu = document.getElementById('menuPanel');
+    if (menu.style.left === '0px') {
+      menu.style.left = '-200px';
+    } else {
+      menu.style.left = '0px';
+    }
+  }
+
   setTimeout(() => {
     document.getElementById('popup').style.display = 'block';
   }, 5000);
+
+  function showContactPopup() {
+    document.getElementById('contactPopup').style.display = 'block';
+  }
+
+  function closeContactPopup() {
+    document.getElementById('contactPopup').style.display = 'none';
+  }
+
+  function joinTelegram() {
+    sprinkleEffect();
+    setTimeout(() => {
+      window.location.href = 'https://t.me/ottnotpublic';
+    }, 3000);
+  }
+
+  function sprinkleEffect() {
+    for (let i = 0; i < 40; i++) {
+      const s = document.createElement('div');
+      s.className = 'sprinkle';
+      s.style.left = window.innerWidth/2 + 'px';
+      s.style.top = window.innerHeight/2 + 'px';
+      const angle = Math.random() * 2 * Math.PI;
+      const distance = Math.random() * 200;
+      s.style.setProperty('--x', `${Math.cos(angle) * distance}px`);
+      s.style.setProperty('--y', `${Math.sin(angle) * distance}px`);
+      document.body.appendChild(s);
+      setTimeout(() => s.remove(), 1000);
+    }
+  }
 </script>
 
 </body>
