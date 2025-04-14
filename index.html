@@ -1,210 +1,158 @@
-<!DOCTYPE html>
-<html lang="en">
+<!DOCTYPE html><html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <title>Nott MODZ - Free Premium Modded Apps</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="Nott MODZ — Download free premium modded apps like Netflix, Prime Video, Spotify, Hotstar, and more. 100% working and virus-free!">
-  <meta name="keywords" content="Nottmodz, mod apps, premium unlocked apps, Netflix mod, Spotify mod, Prime Video mod, free download">
-  <meta name="author" content="Nottmodz Team">
-  <meta name="google-site-verification" content="aLhqFNBb4vJwxRTORi76_uBfY30KVjKL-POvaNpWoew" />
-  <meta property="og:title" content="Nott MODZ - Free Premium Modded Apps">
-  <meta property="og:description" content="Download premium unlocked apps absolutely free! Netflix, Prime Video, Hotstar, and more.">
-  <meta property="og:image" content="https://nottmodz.github.io/logo.png">
-  <meta property="og:url" content="https://nottmodz.github.io/">
-  <meta property="og:type" content="website">
-  <link rel="icon" href="logo.png" type="image/png">
+  <meta charset="UTF-8">
+  <title>PW Coupon Code</title>
   <style>
     body {
-      background: linear-gradient(to right, #1f1f2e, #2c003e);
-      color: white;
-      font-family: sans-serif;
       margin: 0;
-      padding: 0;
-      text-align: center;
-    }
-    .menu {
-      position: absolute;
-      top: 20px;
-      left: 20px;
-      font-size: 30px;
-      cursor: pointer;
-      z-index: 1000;
-      transition: transform 0.3s ease;
-    }
-    .menu:hover {
-      transform: rotate(90deg);
-    }
-    .menu-panel {
-      position: fixed;
-      top: 0;
-      left: -200px;
-      width: 200px;
-      height: 100%;
-      background: #333;
-      padding-top: 60px;
-      transition: left 0.4s ease;
-      z-index: 999;
-    }
-    .menu-panel a {
-      display: block;
-      padding: 15px;
-      color: white;
-      text-decoration: none;
-      font-size: 18px;
-    }
-    .menu-panel a:hover {
-      background: #555;
+      font-family: 'Poppins', sans-serif;
+      background: white;
+      color: #111;
+      overflow-x: hidden;
     }
     h1 {
-      margin-top: 60px;
+      text-align: center;
+      color: #007bff;
+      margin-top: 30px;
+      font-size: 3.2em;
+      animation: pop 1s ease;
+      text-shadow: 2px 2px #dceeff;
     }
-    .app-grid {
-      display: flex;
-      flex-direction: column;
-      gap: 15px;
-      padding: 20px;
-    }
-    .app-card {
-      background: white;
-      color: black;
-      padding: 20px;
-      border-radius: 12px;
-      font-size: 22px;
-      font-weight: bold;
-      box-shadow: 0 4px 10px rgba(0,0,0,0.5);
-      cursor: pointer;
-      transition: transform 0.3s ease;
-    }
-    .app-card:hover {
-      transform: scale(1.05);
-    }
-    .get-btn {
-      background: #ff66cc;
-      color: black;
-      padding: 15px 25px;
-      border: none;
-      border-radius: 30px;
-      font-weight: bold;
-      font-size: 18px;
+    p {
+      text-align: center;
       margin: 20px;
+      font-size: 1.3em;
+      line-height: 1.7;
+      animation: fadeIn 2s ease;
+    }
+    .separator {
+      height: 4px;
+      width: 80%;
+      background: linear-gradient(90deg, #007bff, #00c6ff);
+      margin: 30px auto;
+      border-radius: 10px;
+      animation: grow 2s infinite alternate;
+      box-shadow: 0 0 8px #00c6ff;
+    }
+    table {
+      width: 90%;
+      margin: 20px auto;
+      border-collapse: collapse;
+      animation: fadeInUp 2s ease;
+      box-shadow: 0 0 12px rgba(0,0,0,0.1);
+    }
+    th, td {
+      padding: 15px;
+      text-align: center;
+      border: 1px solid #ddd;
+      font-size: 1.1em;
+    }
+    th {
+      background: #007bff;
+      color: white;
+    }
+    td {
       cursor: pointer;
     }
-    .footer {
-      background: black;
+    td:hover {
+      background: #e6f0ff;
+    }
+    .support {
+      text-align: center;
+      margin: 30px;
+      animation: fadeInUp 2s ease;
+    }
+    .support a {
+      margin: 0 12px;
+      text-decoration: none;
+      color: #007bff;
+      font-weight: bold;
+      font-size: 1.1em;
+    }
+    footer {
+      text-align: center;
       padding: 20px;
-      font-size: 14px;
-    }
-    .floating-whatsapp {
-      position: fixed;
-      bottom: 20px;
-      right: 20px;
-      background: #25D366;
-      width: 60px;
-      height: 60px;
-      border-radius: 50%;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      box-shadow: 0 4px 10px rgba(0,0,0,0.3);
-      cursor: pointer;
-      z-index: 999;
-    }
-    .floating-whatsapp img {
-      width: 35px;
-      height: 35px;
+      background: #f1f1f1;
+      font-size: 0.9em;
+      margin-top: 20px;
     }
     #popup {
       display: none;
       position: fixed;
-      top: 20px;
+      top: 20%;
       left: 50%;
-      transform: translateX(-50%);
-      background: #ff66cc;
-      padding: 15px 30px;
-      border-radius: 30px;
-      color: black;
-      font-weight: bold;
-      z-index: 9999;
-      box-shadow: 0 0 10px rgba(0,0,0,0.5);
+      transform: translate(-50%, -50%);
+      background: #fff;
+      border: 3px solid #007bff;
+      padding: 25px;
+      text-align: center;
+      z-index: 999;
+      box-shadow: 0 0 20px rgba(0,0,0,0.2);
+      border-radius: 12px;
+      animation: bounce 0.7s ease;
+    }
+    #popup h2 {
+      margin: 0 0 15px;
+      color: #007bff;
+      font-size: 2em;
+    }
+    #popup p {
+      font-size: 1.1em;
+    }
+    #popup button {
+      padding: 10px 20px;
+      margin-top: 20px;
+      background: #007bff;
+      color: white;
+      border: none;
+      border-radius: 8px;
       cursor: pointer;
     }
-    #popup span {
-      margin-left: 10px;
-      font-weight: bold;
-      cursor: pointer;
+    #popup button:hover {
+      background: #005fcc;
     }
   </style>
 </head>
 <body>
-
-<div class="menu" onclick="toggleMenu()">&#9776;</div>
-
-<div class="menu-panel" id="menuPanel">
-  <a href="#" onclick="showContactPopup()">Contact Support</a>
-  <a href="#" onclick="joinTelegram()">Join Telegram</a>
-  <a href="team.html">Nott Team</a>
-</div>
-
-<h1>Nott MODZ</h1>
-
-<div class="app-grid">
-  <div class="app-card" onclick="redirectTelegram()">Netflix 🎥</div>
-  <div class="app-card" onclick="redirectTelegram()">Capcut ✂️</div>
-  <div class="app-card" onclick="redirectTelegram()">Spotify 🎵</div>
-  <div class="app-card" onclick="redirectTelegram()">Prime Video 🍿</div>
-  <div class="app-card" onclick="redirectTelegram()">Zee5 📺</div>
-  <div class="app-card" onclick="redirectTelegram()">Telegram ✈️</div>
-  <div class="app-card" onclick="redirectTelegram()">Jio Cinema 🎬</div>
-  <div class="app-card" onclick="redirectTelegram()">Hotstar 🦁</div>
-  <div class="app-card" onclick="redirectTelegram()">Alt Balaji 🎭</div>
-  <div class="app-card" onclick="redirectTelegram()">Sony LIV 📱</div>
-  <div class="app-card" onclick="openEarningApp()">Earning App 💸</div>
-</div>
-
-<button class="get-btn" onclick="window.location.href='https://t.me/nottmodz'">GET ALL APPS PREMIUM</button>
-
-<div class="footer">
-  <strong>GET ALL APP PREMIUM UNLOCK 🔓</strong><br><br>
-  Welcome to NOTTMODZ 🎉 — your one-stop hub for premium modded apps like Netflix 🎥, Prime Video 🍿, Spotify 🎵, Zee5 📺, Capcut ✂️, Jio Cinema 🎬, Hotstar 🦁, Alt Balaji 🎭, Sony LIV 📱 and more!  
-  Get them absolutely FREE with 100% working, virus-free, and ad-free experience. Download, enjoy and support us!  
-  <br><br><strong>© 2024 Team Nottmodz. All rights reserved.</strong>
-</div>
-
-<div class="floating-whatsapp" onclick="window.location.href='https://wa.me/919499473347'">
-  <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" alt="WhatsApp">
-</div>
-
-<div id="popup" onclick="window.location.href='https://t.me/nottmodz'">
-  Join Nottmodz Now — Modded By Rao Jatin! <span onclick="closePopup()">❌</span>
-</div>
-
-<script>
-  function toggleMenu() {
-    const menu = document.getElementById('menuPanel');
-    menu.style.left = (menu.style.left === '0px') ? '-200px' : '0px';
-  }
-  function redirectTelegram() {
-    window.location.href = 'https://t.me/nottmodz';
-  }
-  function joinTelegram() {
-    window.location.href = 'https://t.me/nottmodz';
-  }
-  function showContactPopup() {
-    window.location.href = 'https://wa.me/919499473347';
-  }
-  function closePopup() {
-    document.getElementById('popup').style.display = 'none';
-    event.stopPropagation();
-  }
-  setTimeout(function() {
-    document.getElementById('popup').style.display = 'block';
-  }, 5000);
-
-  function openEarningApp() {
-    window.location.href = 'earning.html';
-  }
-</script>
-
-</body>
+  <h1>PW Coupon Code</h1>
+  <p>Get all PW batches 💥 Discount Coupon Codes 🎁 Save your money & grab the best offers 🤑!</p>
+  <div class="separator"></div>  <table>
+    <tr>
+      <th>Batch Name</th>
+      <th>Coupon Code (Click to Copy)</th>
+    </tr>
+    <tr><td>CUET Pravesh 3.0</td><td onclick="copyCode('EXAMPLE32')">EXAMPLE32</td></tr>
+    <tr><td>NEET Warrior 2.0</td><td onclick="copyCode('EXAMPLE21')">EXAMPLE21</td></tr>
+    <tr><td>JEE Advance Pro</td><td onclick="copyCode('EXAMPLE11')">EXAMPLE11</td></tr>
+  </table>  <div class="separator"></div>  <div class="support">
+    <p>Need Urgent Support?</p>
+    <a href="https://instagram.com/allpwcouponcode2024">Instagram</a>
+    <a href="https://t.me/iamhappyyadav">Telegram</a>
+    <a href="https://wa.me/917419126032">WhatsApp</a>
+  </div>  <footer>
+    PW Coupon Code — All Rights Reserved © 2024
+  </footer>  <div id="popup">
+    <h2>🎉 Congratulations! 🎉</h2>
+    <p>You got a <b>100% Discount Coupon Code:</b><br>
+      <span style="color:#007bff; font-size:1.3em;">EXAMPLE100</span></p>
+    <button onclick="claimCode()">Claim Now</button>
+    <br><br>
+    <button onclick="closePopup()">Close</button>
+  </div>  <script>
+    function copyCode(code) {
+      navigator.clipboard.writeText(code);
+      alert("Coupon Copied: " + code);
+    }
+    setTimeout(() => {
+      document.getElementById("popup").style.display = "block";
+    }, 8000);
+    function claimCode() {
+      navigator.clipboard.writeText("EXAMPLE100");
+      alert("Code Copied: EXAMPLE100");
+    }
+    function closePopup() {
+      document.getElementById("popup").style.display = "none";
+    }
+  </script></body>
 </html>
