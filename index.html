@@ -1,355 +1,416 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta charset="UTF-8">
-  <title>PW Coupon Code</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Nottmodz - Mods Beyond LIMIT</title>
   <style>
-    body {
+    :root {
+      --main-bg: #12172a;
+      --card-bg: #1e2235;
+      --accent: #00f7ff;
+      --accent-hover: #00c4cc;
+      --text-light: #ffffff;
+      --text-muted: #b0b3c4;
+    }
+
+    * {
       margin: 0;
-      font-family: 'Poppins', sans-serif;
-      background: white;
-      color: #111;
-      overflow-x: hidden;
+      padding: 0;
+      box-sizing: border-box;
     }
-    h1 {
+
+    body {
+      font-family: 'Segoe UI', sans-serif;
+      background: var(--main-bg);
+      color: var(--text-light);
+      padding: 20px;
+      min-height: 100vh;
+    }
+
+    .header {
       text-align: center;
-      color: #007bff;
-      margin-top: 30px;
-      font-size: 3.2em;
-      animation: pop 1s ease;
-      text-shadow: 2px 2px #dceeff;
+      margin-bottom: 20px;
+      animation: fadeInDown 1s ease;
     }
-    p {
+
+    .header h1 {
+      font-size: 2.2em;
+      color: var(--accent);
+    }
+
+    .tagline {
+      font-size: 1em;
+      color: var(--text-muted);
+      margin-top: 5px;
+      font-style: italic;
+    }
+
+    .search-bar {
+      margin: 20px 0;
       text-align: center;
-      margin: 20px;
-      font-size: 1.3em;
-      line-height: 1.7;
-      animation: fadeIn 2s ease;
     }
-    .separator {
-      height: 4px;
-      width: 80%;
-      background: linear-gradient(90deg, #007bff, #00c6ff);
-      margin: 30px auto;
-      border-radius: 10px;
-      animation: grow 2s infinite alternate;
-      box-shadow: 0 0 8px #00c6ff;
-    }
-    table {
+
+    .search-bar input {
       width: 90%;
-      margin: 20px auto;
-      border-collapse: collapse;
-      animation: fadeInUp 2s ease;
-      box-shadow: 0 0 12px rgba(0,0,0,0.1);
+      padding: 12px 15px;
+      border-radius: 30px;
+      border: none;
+      outline: none;
+      font-size: 1em;
+      background: #2b2f4b;
+      color: white;
+      transition: all 0.3s ease;
     }
-    th, td {
+
+    .search-bar input:focus {
+      background: #35395c;
+    }
+
+    .app-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 20px;
+      animation: fadeInUp 1s ease;
+    }
+
+    .app-card {
+      background: var(--card-bg);
+      border-radius: 15px;
       padding: 15px;
       text-align: center;
-      border: 1px solid #ddd;
-      font-size: 1.1em;
-    }
-    th {
-      background: #007bff;
-      color: white;
-    }
-    td {
-      cursor: pointer;
-    }
-    td:hover {
-      background: #e6f0ff;
-    }
-    .support {
-      text-align: center;
-      margin: 30px;
-      animation: fadeInUp 2s ease;
-    }
-    .support a {
-      margin: 0 12px;
-      text-decoration: none;
-      color: #007bff;
-      font-weight: bold;
-      font-size: 1.1em;
-    }
-    footer {
-      text-align: center;
-      padding: 20px;
-      background: #f1f1f1;
-      font-size: 0.9em;
-      margin-top: 20px;
-    }
-    #popup {
-      display: none;
-      position: fixed;
-      top: 20%;
-      left: 50%;
-      transform: translate(-50%, -50%);
-      background: #fff;
-      border: 3px solid #007bff;
-      padding: 25px;
-      text-align: center;
-      z-index: 999;
-      box-shadow: 0 0 20px rgba(0,0,0,0.2);
-      border-radius: 12px;
-      animation: bounce 0.7s ease;
-    }
-    #popup h2 {
-      margin: 0 0 15px;
-      color: #007bff;
-      font-size: 2em;
-    }
-    #popup p {
-      font-size: 1.1em;
-    }
-    #popup button {
-      padding: 10px 20px;
-      margin-top: 20px;
-      background: #007bff;
-      color: white;
-      border: none;
-      border-radius: 8px;
-      cursor: pointer;
-    }
-    #popup button:hover {
-      background: #005fcc;
-    }
-    .cut-button {
-      padding: 10px 20px;
-      margin-top: 20px;
-      background: #dc3545;
-      color: white;
-      border: none;
-      border-radius: 8px;
-      cursor: pointer;
-    }
-    .cut-button:hover {
-      background: #c82333;
-    }
-    .ai-button {
-      position: fixed;
-      bottom: 20px;
-      right: 20px;
-      background: #007bff;
-      color: white;
-      width: 60px;
-      height: 60px;
-      border-radius: 50%;
-      text-align: center;
-      line-height: 60px;
-      font-size: 30px;
-      cursor: pointer;
-      box-shadow: 0 0 12px rgba(0,0,0,0.3);
-      z-index: 999;
       transition: transform 0.3s ease;
     }
-    .ai-button:hover {
-      background: #005fcc;
-      transform: scale(1.1);
+
+    .app-card:hover {
+      transform: scale(1.03);
     }
-    .guide-section {
-      width: 90%;
-      margin: 30px auto;
+
+    .app-card img {
+      width: 60px;
+      height: 60px;
+      object-fit: cover;
+      border-radius: 12px;
+      margin-bottom: 10px;
+    }
+
+    .download-btn {
+      margin-top: 10px;
+      background-color: var(--accent);
+      color: #1e1e2f;
+      border: none;
+      padding: 10px 15px;
+      border-radius: 20px;
+      cursor: pointer;
+      font-weight: bold;
+      transition: background 0.3s;
+    }
+
+    .download-btn:hover {
+      background-color: var(--accent-hover);
+    }
+
+    /* Floating Bot Button */
+    .bot-btn {
+      position: fixed;
+      bottom: 25px;
+      right: 20px;
+      width: 60px;
+      height: 60px;
+      background-color: var(--accent);
+      color: #12172a;
+      border: none;
+      border-radius: 50%;
+      font-size: 28px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      box-shadow: 0 0 10px rgba(0,0,0,0.3);
+      cursor: pointer;
+      z-index: 1000;
+      transition: background 0.3s;
+    }
+
+    .bot-btn:hover {
+      background-color: var(--accent-hover);
+    }
+
+    .bot-popup {
+      position: fixed;
+      bottom: 100px;
+      right: 20px;
+      background: var(--card-bg);
       padding: 20px;
-      background: #f9f9f9;
+      border-radius: 15px;
+      box-shadow: 0 10px 25px rgba(0,0,0,0.5);
+      display: none;
+      z-index: 999;
+      animation: fadeIn 0.3s ease;
+    }
+
+    .bot-popup button {
+      width: 100%;
+      margin-top: 10px;
+      padding: 10px;
+      background: var(--accent);
+      color: var(--main-bg);
+      border: none;
       border-radius: 10px;
-      box-shadow: 0 0 8px rgba(0,0,0,0.1);
-      animation: fadeIn 2s ease;
+      cursor: pointer;
+      font-weight: bold;
     }
-    .guide-section h2 {
-      text-align: center;
-      color: #007bff;
-      margin-bottom: 20px;
+
+    .bot-popup button:hover {
+      background: var(--accent-hover);
     }
-    .guide-step {
-      margin: 20px 0;
-      font-size: 1.2em;
-    }
-    .guide-step img {
-      display: block;
-      max-width: 100%;
-      margin: 15px auto;
-      border-radius: 8px;
-      box-shadow: 0 0 10px rgba(0,0,0,0.1);
-    }
-    @keyframes grow {
-      0% { transform: scaleX(0.7); }
-      100% { transform: scaleX(1); }
-    }
+
     @keyframes fadeIn {
-      from { opacity: 0; }
-      to { opacity: 1; }
+      from { opacity: 0; transform: scale(0.9); }
+      to { opacity: 1; transform: scale(1); }
     }
+
     @keyframes fadeInUp {
-      from { opacity: 0; transform: translateY(20px); }
+      from { opacity: 0; transform: translateY(30px); }
       to { opacity: 1; transform: translateY(0); }
     }
-    @keyframes pop {
-      0% { transform: scale(0.8); }
-      100% { transform: scale(1); }
-    }
-    @keyframes bounce {
-      0% { transform: translate(-50%, -50%) scale(0.8); }
-      50% { transform: translate(-50%, -50%) scale(1.1); }
-      100% { transform: translate(-50%, -50%) scale(1); }
+
+    @keyframes fadeInDown {
+      from { opacity: 0; transform: translateY(-30px); }
+      to { opacity: 1; transform: translateY(0); }
     }
   </style>
 </head>
 <body>
-  <h1>PW Coupon Code</h1>
-  <p>Get all PW batches 💥 PW Discount Coupon Codes 🎁 Save your money & grab the best offers 🤑! Yeh sab bilkul free ⚡ Don't miss it 🚀</p>
-  <div class="separator"></div>
 
-  <table>
-    <tr>
-      <th>Batch Name</th>
-      <th>Coupon Code (Click to Copy)</th>
-    </tr>
-    <tr><td>CUET Pravesh 3.0</td><td onclick="copyCode('EXAMPLE32')">EXAMPLE32</td></tr>
-    <tr><td>NEET Warrior 2.0</td><td onclick="copyCode('EXAMPLE21')">EXAMPLE21</td></tr>
-    <tr><td>JEE Advance Pro</td><td onclick="copyCode('EXAMPLE11')">EXAMPLE11</td></tr>
-    <!-- add other batches here -->
-  </table>
-
-  <div class="separator"></div>
-
-  <div class="guide-section">
-    <h2>How To Get PW Coupon Code?</h2>
-    <div class="guide-step">Step 1. Example and connect with our team.<br>
-      <img src="https://i.ibb.co/qYrzppgv/Screenshot-20250413-210532-Chrome-1.jpg" alt="Step 1">
-    </div>
-    <div class="guide-step">Step 2. Write your batch name and you’ll get the coupon.</div>
-    <div class="guide-step">Step 3. Now while purchasing your batch on the payment page, click on Apply Code/Coupon.<br>
-      <img src="https://i.ibb.co/QvGV4qxD/Screenshot-20250413-210615-Chrome.png" alt="Step 3">
-    </div>
-    <div class="guide-step">Step 4. Enter the coupon you get and click on Apply.<br>
-      <img src="https://i.ibb.co/yw0Csf8/Screenshot-20250413-210606-Chrome.png" alt="Step 4">
-    </div>
-    <div class="guide-step">Step 5. Hurray! you have successfully applied the coupon code and you can see you have received the discount.<br>
-      <img src="https://i.ibb.co/KxK2L4DF/Screenshot-20250413-210540-Chrome.png" alt="Step 5">
-    </div>
+  <div class="header">
+    <h1>Nottmodz</h1>
+    <p class="tagline">Mods Beyond LIMIT</p>
   </div>
 
-  <div class="support">
-    <p>Need Urgent Support?</p>
-    <a href="https://www.instagram.com/allpwcouponcode2024" target="_blank">Instagram</a>
-    <a href="https://t.me/iamhappyyadav" target="_blank">Telegram</a>
-    <a href="#">YouTube (Coming Soon)</a>
-    <a href="https://wa.me/917419126032" target="_blank">WhatsApp</a>
+  <div class="search-bar">
+    <input type="text" id="searchInput" placeholder="Search Mods...">
   </div>
 
-  <footer>
-    PW Coupon Code — All Rights Reserved © 2024
-  </footer>
+  <div class="app-grid" id="appList">
+    <!-- Prime Video -->
+<div class="app-card" data-name="Prime Video">
+  <img src="https://i.ibb.co/7x0t7zcd/Amazon-Prime-Video-logo-2024-svg.png" alt="Prime Video">
+  <div>Prime Video</div>
+  <button class="download-btn" onclick="downloadApp('https://devuploads.com/kivgy4xspias')">Download</button>
+</div>
 
-  <div id="popup">
-    <h2>🎉 Congratulations! 🎉</h2>
-    <p>You just got a <b>100% Discount Coupon Code:</b><br>
-      <span style="color:#007bff; font-size:1.3em;">EXAMPLE100</span>
-    </p>
-    <button onclick="claimCode()">Claim Now</button>
-    <br><br>
-    <button onclick="closePopup()" class="cut-button">Cut</button>
+<!-- Amazon Mini TV -->
+<div class="app-card" data-name="Amazon Mini TV">
+  <img src="https://i.ibb.co/9ktbF8bs/images.jpg" alt="Amazon Mini TV">
+  <div>Amazon Mini TV</div>
+  <button class="download-btn" onclick="downloadApp('https://devuploads.com/40dw5sfemc3d')">Download</button>
+</div>
+
+<!-- Sony Liv -->
+<div class="app-card" data-name="Sony Liv">
+  <img src="https://i.ibb.co/GfgmSkXS/images-1.jpg" alt="Sony Liv">
+  <div>Sony Liv</div>
+  <p style="color:#00f7ff; font-size: 0.85em;">Password: 2580</p>
+  <button class="download-btn" onclick="downloadApp('https://devuploads.com/999whsr7zf9e')">Download</button>
+</div>
+
+<!-- Castle -->
+<div class="app-card" data-name="Castle">
+  <img src="https://i.ibb.co/6Rs5GmMs/images-2.jpg" alt="Castle">
+  <div>Castle</div>
+  <button class="download-btn" onclick="downloadApp('https://devuploads.com/ccvo958zerq8')">Download</button>
+</div>
+
+<!-- Kuku FM -->
+<div class="app-card" data-name="Kuku FM">
+  <img src="https://i.ibb.co/gFX4Y4dH/images-3.jpg" alt="Kuku FM">
+  <div>Kuku FM</div>
+  <button class="download-btn" onclick="downloadApp('https://devuploads.com/y76xxrwbb23a')">Download</button>
+</div>
+
+<!-- Snaptube -->
+<div class="app-card" data-name="Snaptube">
+  <img src="https://i.ibb.co/HLskwsNW/Snaptube-Logo.png" alt="Snaptube">
+  <div>Snaptube</div>
+  <button class="download-btn" onclick="downloadApp('https://devuploads.com/8xiloxf1gzuo')">Download</button>
+</div>
+
+<!-- Netflix -->
+<div class="app-card" data-name="Netflix">
+  <img src="https://i.ibb.co/9m1FbTqG/images.png" alt="Netflix">
+  <div>Netflix</div>
+  <button class="download-btn" onclick="downloadApp('https://devuploads.com/pt75rb19mi9f')">Download</button>
+</div>
+
+<!-- Physics Wallah -->
+<div class="app-card" data-name="Physics Wallah">
+  <img src="https://i.ibb.co/bgzkhVCR/images-4.jpg" alt="Physics Wallah">
+  <div>Physics Wallah</div>
+  <button class="download-btn" onclick="downloadApp('https://devuploads.com/tzwiud0u9me7')">Download 1</button>
+  <button class="download-btn" onclick="downloadApp('https://devuploads.com/zmyqphqhlvf9')">Download 2</button>
+</div>
+
+<!-- Istreamflare -->
+<div class="app-card" data-name="Istreamflare">
+  <img src="https://i.ibb.co/8L99vKxL/images-5.jpg" alt="Istreamflare">
+  <div>Istreamflare</div>
+  <button class="download-btn" onclick="downloadApp('https://devuploads.com/brreq4m9kr7m')">Download</button>
+</div>
+
+<!-- Truecaller -->
+<div class="app-card" data-name="Truecaller">
+  <img src="https://i.ibb.co/DHP36QZQ/0daa6df5e306fffca6e894f7706811ac317e8f66e2fec0030e5e39c93f444976-200.jpg" alt="Truecaller">
+  <div>Truecaller</div>
+  <button class="download-btn" onclick="downloadApp('https://devuploads.com/93ng13en6nml')">Download</button>
+</div>
   </div>
 
-  <div class="ai-button" onclick="openAIChat()">🤖</div>
+  <!-- Bot Floating Button -->
+  <button class="bot-btn" onclick="toggleBot()">💬</button>
+
+  <!-- Bot Popup -->
+  <div class="bot-popup" id="botPopup">
+    <button onclick="openWhatsApp('Request For New Mod')">Request For New Mod</button>
+    <button onclick="openWhatsApp('Request For Mod Update')">Request For Mod Update</button>
+  </div>
 
   <script>
-    function copyCode(code) {
-      navigator.clipboard.writeText(code);
-      alert("Coupon Copied: " + code);
+    // Search
+    document.getElementById("searchInput").addEventListener("keyup", function() {
+      const value = this.value.toLowerCase();
+      document.querySelectorAll(".app-card").forEach(card => {
+        const name = card.getAttribute("data-name").toLowerCase();
+        card.style.display = name.includes(value) ? "block" : "none";
+      });
+    });
+
+    // Open Download in Chrome
+    function downloadApp(link) {
+      window.open(link, '_blank');
     }
 
-    setTimeout(() => {
-      document.getElementById("popup").style.display = "block";
-    }, 8000);
-
-    function claimCode() {
-      navigator.clipboard.writeText("EXAMPLE100");
-      alert("Code Copied: EXAMPLE100");
+    // Notification
+    if ("Notification" in window && Notification.permission !== "granted") {
+      Notification.requestPermission().then(permission => {
+        if (permission === "granted") {
+          new Notification("Nottmodz", {
+            body: "You’ll now get updates when we add new apps!",
+            icon: "https://your-logo-link.com/icon.png"
+          });
+        }
+      });
     }
 
-    function closePopup() {
-      document.getElementById("popup").style.display = "none";
+    // Bot Functions
+    function toggleBot() {
+      const popup = document.getElementById("botPopup");
+      popup.style.display = popup.style.display === "block" ? "none" : "block";
     }
 
-    function openAIChat() {
-      alert("AI Chat is coming soon!");
+    function openWhatsApp(message) {
+      const encodedMsg = encodeURIComponent(message);
+      const url = `https://wa.me/919499473347?text=${encodedMsg}`;
+      window.open(url, '_blank');
     }
   </script>
 </body>
-<!-- AI Chat Box -->
-<div id="chatbox" style="display:none; position:fixed; top:50%; left:50%; transform:translate(-50%, -50%); width:80%; max-width:350px; background:#fff; border-radius:15px; box-shadow:0 0 20px rgba(0,0,0,0.3); padding:20px; z-index:9999; font-family:'Poppins', sans-serif;">
-  <div style="text-align:right;">
-    <button onclick="closeAIChat()" style="background:#ff4d4d; color:white; border:none; border-radius:50%; width:30px; height:30px; cursor:pointer;">×</button>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Slide Menu</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Segoe UI', sans-serif;
+    }
+
+    .menu-button {
+      position: fixed;
+      top: 15px;
+      right: 20px;
+      z-index: 1001;
+      background: #000;
+      border: none;
+      padding: 10px 12px;
+      border-radius: 8px;
+      cursor: pointer;
+    }
+
+    .menu-button span {
+      display: block;
+      width: 25px;
+      height: 3px;
+      background: #fff;
+      margin: 5px 0;
+      transition: 0.4s;
+    }
+
+    .sidebar {
+      height: 100%;
+      width: 0;
+      position: fixed;
+      top: 0;
+      right: 0;
+      background-color: #111;
+      overflow-x: hidden;
+      transition: 0.4s;
+      padding-top: 60px;
+      z-index: 1000;
+    }
+
+    .sidebar a {
+      padding: 12px 24px;
+      text-decoration: none;
+      font-size: 18px;
+      color: #f1f1f1;
+      display: block;
+      transition: 0.3s;
+      border-bottom: 1px solid #333;
+    }
+
+    .sidebar a:hover {
+      background: #222;
+    }
+
+    .sidebar.open {
+      width: 280px;
+    }
+
+    .close-btn {
+      position: absolute;
+      top: 20px;
+      right: 25px;
+      font-size: 30px;
+      color: #fff;
+      cursor: pointer;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Hamburger Icon -->
+  <button class="menu-button" onclick="toggleMenu()">
+    <span></span>
+    <span></span>
+    <span></span>
+  </button>
+
+  <!-- Sidebar -->
+  <div id="mySidebar" class="sidebar">
+    <span class="close-btn" onclick="toggleMenu()">&times;</span>
+    <a href="https://go.screenpal.com/watch/cTfoDinjweo" target="_blank">1. How To Download Mods?</a>
+    <a href="https://go.screenpal.com/watch/cTfoDInjwfY" target="_blank">2. How To use Netflix After Download?</a>
+    <a href="https://go.screenpal.com/watch/cTfoD2njwft" target="_blank">3. Sony Liv pin?</a>
   </div>
-  <div id="chatlog" style="height:250px; overflow-y:auto; font-size:1em; line-height:1.5;"></div>
-  <input type="text" id="userInput" placeholder="Type here..." style="width:100%; padding:10px; margin-top:10px; border-radius:8px; border:1px solid #ccc; outline:none;">
-</div>
 
-<script>
-function openAIChat(){
-  document.getElementById("chatbox").style.display = "block";
-  document.getElementById("chatlog").innerHTML = "";
-  typeMessage("🤖 Hello Dear User, Which Batch Coupon Code You Need?");
-}
-
-function closeAIChat(){
-  document.getElementById("chatbox").style.display = "none";
-}
-
-function typeMessage(message, callback){
-  let i = 0;
-  let log = document.getElementById("chatlog");
-  let div = document.createElement("div");
-  div.style.margin = "10px 0";
-  log.appendChild(div);
-
-  function typeChar(){
-    if(i < message.length){
-      div.innerHTML += message.charAt(i);
-      i++;
-      setTimeout(typeChar, 30);
-    } else {
-      if(callback) callback();
+  <script>
+    function toggleMenu() {
+      document.getElementById("mySidebar").classList.toggle("open");
     }
-  }
-  typeChar();
-}
+  </script>
 
-document.getElementById("userInput").addEventListener("keydown", function(e){
-  if(e.key === "Enter"){
-    let userMsg = this.value.trim();
-    if(userMsg){
-      let log = document.getElementById("chatlog");
-      let userDiv = document.createElement("div");
-      userDiv.style.margin = "10px 0";
-      userDiv.style.textAlign = "right";
-      userDiv.style.color = "#007bff";
-      userDiv.innerText = "You: " + userMsg;
-      log.appendChild(userDiv);
-      this.value = "";
-
-      typeMessage("🤖 Okay Sir, here your coupon Code - EXAMPLE65", function(){
-        let copyBtn = document.createElement("button");
-        copyBtn.innerText = "Copy Code";
-        copyBtn.style.margin = "10px 0";
-        copyBtn.style.padding = "8px 15px";
-        copyBtn.style.background = "#007bff";
-        copyBtn.style.color = "white";
-        copyBtn.style.border = "none";
-        copyBtn.style.borderRadius = "8px";
-        copyBtn.style.cursor = "pointer";
-        copyBtn.onclick = function(){
-          navigator.clipboard.writeText("EXAMPLE65");
-          alert("Coupon Copied: EXAMPLE65");
-        };
-        log.appendChild(copyBtn);
-
-        typeMessage("🤖 Here our chat has been ended. Have a nice day Sir!");
-      });
-    }
-  }
-});
-</script>
-</script>
+</body>
+</html>
 </html>
