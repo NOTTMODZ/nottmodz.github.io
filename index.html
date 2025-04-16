@@ -1,13 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <!-- Google Tag Manager -->
-<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
-new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
-j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
-'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
-})(window,document,'script','dataLayer','GTM-WW2GLMKV');</script>
-<!-- End Google Tag Manager -->
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Nottmodz - Mods Beyond LIMIT</title>
@@ -215,6 +208,69 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 </div>
 
   <div class="header">
+    <header style="display: flex; align-items: center; gap: 10px; padding: 10px;">
+  <img src="https://i.ibb.co/bcfhGKB/Picsart-25-04-16-19-31-02-709.jpg" alt="Nottmodz Logo" style="height: 50px;">
+  <style>
+  header {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 15px;
+    background: linear-gradient(90deg, #0f0f0f, #1a1a1a);
+    color: white;
+    padding: 20px 30px;
+    border-bottom: 2px solid #333;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.5);
+    position: relative;
+    overflow: hidden;
+    animation: slideDown 1s ease-out;
+    border-radius: 0 0 15px 15px;
+  }
+
+  header img {
+    height: 60px;
+    border-radius: 10px;
+    animation: fadeIn 1.5s ease-in-out;
+    transition: transform 0.3s ease;
+  }
+
+  header img:hover {
+    transform: scale(1.1) rotate(1deg);
+  }
+
+  header h1 {
+    font-size: 2.2rem;
+    font-weight: bold;
+    letter-spacing: 1px;
+    animation: fadeIn 1.8s ease-in-out;
+    background: linear-gradient(to right, #00ffe7, #00bfff);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+
+  @keyframes slideDown {
+    from {
+      transform: translateY(-100%);
+      opacity: 0;
+    }
+    to {
+      transform: translateY(0);
+      opacity: 1;
+    }
+  }
+
+  @keyframes fadeIn {
+    from {
+      opacity: 0;
+      transform: scale(0.9);
+    }
+    to {
+      opacity: 1;
+      transform: scale(1);
+    }
+  }
+</style>
+</header>
     <h1>Nottmodz</h1>
     <p class="tagline">Mods Beyond LIMIT</p>
   </div>
@@ -568,10 +624,6 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
   </style>
 </head>
 <body>
-  <!-- Google Tag Manager (noscript) -->
-<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-WW2GLMKV"
-height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
-<!-- End Google Tag Manager (noscript) -->
 
 <!-- Hamburger Icon -->
 <button class="menu-button" onclick="toggleMenu()" aria-label="Toggle Menu">
@@ -662,47 +714,4 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
   .menu-links {
     opacity: 0;
     transform: translateX(30px);
-    transition: opacity 0.3s ease, transform 0.3s ease;
-    padding: 20px;
-    display: none;
-    flex-direction: column;
-    gap: 15px;
-  }
-
-  .sidebar.open .menu-links {
-    display: flex;
-    opacity: 1;
-    transform: translateX(0);
-  }
-
-  .menu-links button {
-    background: linear-gradient(135deg, var(--accent), var(--accent-hover));
-    border: none;
-    padding: 12px;
-    border-radius: 12px;
-    color: #12172a;
-    font-weight: bold;
-    font-size: 16px;
-    cursor: pointer;
-    transition: transform 0.2s ease, background 0.3s ease;
-  }
-
-  .menu-links button:hover {
-    transform: scale(1.05);
-    background: linear-gradient(135deg, var(--accent-hover), var(--accent));
-  }
-</style>
-
-<script>
-// Show popup after 5 seconds
-window.addEventListener('load', function() {
-  setTimeout(function() {
-    const popup = document.getElementById('popupBanner');
-    if (popup) popup.style.display = 'block';
-  }, 5000);
-});
-  function toggleMenu() {
-    const sidebar = document.getElementById("mySidebar");
-    sidebar.classList.toggle("open");
-  }
-</script>
+    tr
