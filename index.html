@@ -638,6 +638,162 @@
     }
   </style>
 </head>
+  <style>
+  footer {
+    background: linear-gradient(135deg, #0f2027, #203a43, #2c5364); /* New dark professional gradient */
+    color: #fff;
+    padding: 50px 20px 30px;
+    font-family: 'Segoe UI', sans-serif;
+    animation: fadeInUp 1.2s ease;
+  }
+
+  .footer-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    max-width: 1200px;
+    margin: auto;
+  }
+
+  .footer-section {
+    flex: 1 1 300px;
+    margin: 20px;
+  }
+
+  footer h4 {
+    font-size: 20px;
+    margin-bottom: 15px;
+    color: #f9ca24;
+  }
+
+  footer ul {
+    list-style: none;
+    padding: 0;
+  }
+
+  footer ul li {
+    margin-bottom: 10px;
+    font-size: 15px;
+  }
+
+  footer a {
+    color: #dff9fb;
+    text-decoration: none;
+    transition: 0.3s;
+  }
+
+  footer a:hover {
+    color: #f9ca24;
+  }
+
+  .request-form input,
+  .request-form textarea {
+    width: 100%;
+    padding: 10px;
+    margin: 8px 0;
+    border: none;
+    border-radius: 5px;
+    font-size: 14px;
+  }
+
+  .request-form button {
+    background: #f9ca24;
+    color: #000;
+    border: none;
+    padding: 10px 20px;
+    margin-top: 10px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: 0.3s;
+  }
+
+  .request-form button:hover {
+    background: #e1b907;
+  }
+
+  .footer-bottom {
+    text-align: center;
+    margin-top: 30px;
+    font-size: 14px;
+    opacity: 0.8;
+  }
+
+  @keyframes fadeInUp {
+    from {
+      opacity: 0;
+      transform: translateY(20px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  @media (max-width: 768px) {
+    .footer-container {
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+    }
+
+    .footer-section {
+      margin: 20px 0;
+    }
+  }
+</style>
+
+<footer>
+  <div class="footer-container">
+
+    <!-- Quick Links -->
+    <div class="footer-section">
+      <h4>Quick Links</h4>
+      <ul>
+        <li><a href="/">Home</a></li>
+        <li><a href="#privacy-policy">Privacy Policy</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+    </div>
+
+    <!-- Contact & Social -->
+    <div class="footer-section" id="contact">
+      <h4>Contact</h4>
+      <ul>
+        <li>Email: <a href="mailto:jatinhelpline89@gmail.com">jatinhelpline89@gmail.com</a></li>
+        <li>Address: Connaught Place, D35-H3005, Delhi, India</li>
+      </ul>
+      <h4>Social Links</h4>
+      <ul>
+        <li><a href="https://www.instagram.com/noturjatin?igsh=MXVtcjVzanJ4bzVjZg==">Instagram</a></li>
+        <li><a href="https://t.me/nottmodz">Telegram</a></li>
+        <li><a href="https://youtube.com/@jatinrao-s8x?si=_4WFJ6tYvz6kw2wu">YouTube</a></li>
+        <li><a href="https://github.com/NOTTMODZ">GitHub</a></li>
+      </ul>
+    </div>
+
+    <!-- Request For Update -->
+    <div class="footer-section">
+      <h4>Request For Update</h4>
+      <form class="request-form" action="mailto:jatinhelpline89@gmail.com" method="POST" enctype="text/plain">
+        <input type="text" name="name" placeholder="Your Name" required>
+        <textarea name="request" placeholder="Which MOD do you want?" rows="4" required></textarea>
+        <button type="submit">Submit Request</button>
+      </form>
+    </div>
+
+    <!-- Privacy Policy -->
+    <div class="footer-section" id="privacy-policy">
+      <h4>Privacy Policy</h4>
+      <p style="font-size: 14px; line-height: 1.6;">
+        We respect your privacy. Any information provided to Nottmodz is kept confidential and used solely for improving your experience. We do not sell or share data. For any queries, please contact us at jatinhelpline89@gmail.com.
+      </p>
+    </div>
+  </div>
+
+  <div class="footer-bottom">
+    &copy; 2025 Calm Team Nottmodz. All rights reserved.
+  </div>
+</footer>
 <body>
 
 <!-- Hamburger Icon -->
