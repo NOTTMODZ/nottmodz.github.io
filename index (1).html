@@ -1,0 +1,883 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Nottmodz - Mods Beyond LIMIT</title>
+  <style>
+  .popup-banner {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  background: var(--accent);
+  color: #12172a;
+  text-align: center;
+  padding: 15px 10px;
+  font-weight: bold;
+  display: none;
+  z-index: 9999;
+}
+.popup-banner span {
+  cursor: pointer;
+  position: absolute;
+  top: 10px;
+  right: 20px;
+  font-size: 20px;
+  font-weight: bold;
+}
+    :root {
+      --main-bg: #12172a;
+      --card-bg: #1e2235;
+      --accent: #00f7ff;
+      --accent-hover: #00c4cc;
+      --text-light: #ffffff;
+      --text-muted: #b0b3c4;
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Segoe UI', sans-serif;
+      background: var(--main-bg);
+      color: var(--text-light);
+      padding: 20px;
+      min-height: 100vh;
+    }
+
+    .header {
+      text-align: center;
+      margin-bottom: 20px;
+      animation: fadeInDown 1s ease;
+    }
+
+    .header h1 {
+      font-size: 2.2em;
+      color: var(--accent);
+    }
+
+    .tagline {
+      font-size: 1em;
+      color: var(--text-muted);
+      margin-top: 5px;
+      font-style: italic;
+    }
+
+    .search-bar {
+      margin: 20px 0;
+      text-align: center;
+    }
+
+    .search-bar input {
+      width: 90%;
+      padding: 12px 15px;
+      border-radius: 30px;
+      border: none;
+      outline: none;
+      font-size: 1em;
+      background: #2b2f4b;
+      color: white;
+      transition: all 0.3s ease;
+    }
+
+    .search-bar input:focus {
+      background: #35395c;
+    }
+
+    .app-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 20px;
+      animation: fadeInUp 1s ease;
+    }
+
+    .app-card {
+      background: var(--card-bg);
+      border-radius: 15px;
+      padding: 15px;
+      text-align: center;
+      transition: transform 0.3s ease;
+    }
+
+    .app-card:hover {
+      transform: scale(1.03);
+    }
+
+    .app-card img {
+      width: 60px;
+      height: 60px;
+      object-fit: cover;
+      border-radius: 12px;
+      margin-bottom: 10px;
+    }
+
+    .download-btn {
+      margin-top: 10px;
+      background-color: var(--accent);
+      color: #1e1e2f;
+      border: none;
+      padding: 10px 15px;
+      border-radius: 20px;
+      cursor: pointer;
+      font-weight: bold;
+      transition: background 0.3s;
+    }
+
+    .download-btn:hover {
+      background-color: var(--accent-hover);
+    }
+
+    /* Floating Bot Button */
+    .bot-btn {
+      position: fixed;
+      bottom: 25px;
+      right: 20px;
+      width: 60px;
+      height: 60px;
+      background-color: var(--accent);
+      color: #12172a;
+      border: none;
+      border-radius: 50%;
+      font-size: 28px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      box-shadow: 0 0 10px rgba(0,0,0,0.3);
+      cursor: pointer;
+      z-index: 1000;
+      transition: background 0.3s;
+    }
+
+    .bot-btn:hover {
+      background-color: var(--accent-hover);
+    }
+
+    .bot-popup {
+      position: fixed;
+      bottom: 100px;
+      right: 20px;
+      background: var(--card-bg);
+      padding: 20px;
+      border-radius: 15px;
+      box-shadow: 0 10px 25px rgba(0,0,0,0.5);
+      display: none;
+      z-index: 999;
+      animation: fadeIn 0.3s ease;
+    }
+
+    .bot-popup button {
+      width: 100%;
+      margin-top: 10px;
+      padding: 10px;
+      background: var(--accent);
+      color: var(--main-bg);
+      border: none;
+      border-radius: 10px;
+      cursor: pointer;
+      font-weight: bold;
+    }
+
+    .bot-popup button:hover {
+      background: var(--accent-hover);
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; transform: scale(0.9); }
+      to { opacity: 1; transform: scale(1); }
+    }
+
+    @keyframes fadeInUp {
+      from { opacity: 0; transform: translateY(30px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    @keyframes fadeInDown {
+      from { opacity: 0; transform: translateY(-30px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+  </style>
+</head>
+<body>
+  <div class="popup-banner" id="popupBanner" onclick="window.open('https://youtube.com/shorts/q3k_-HB0GzA?si=_199BA-HGhZ7ubZT','_blank')">
+  How to Download Mods
+  <span onclick="event.stopPropagation(); this.parentElement.style.display='none';">&times;</span>
+</div>
+
+  <div class="header">
+    <header style="display: flex; align-items: center; gap: 10px; padding: 10px;">
+  <img src="https://i.ibb.co/bcfhGKB/Picsart-25-04-16-19-31-02-709.jpg" alt="Nottmodz Logo" style="height: 50px;">
+  <style>
+  header {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 15px;
+    background: linear-gradient(90deg, #0f0f0f, #1a1a1a);
+    color: white;
+    padding: 20px 30px;
+    border-bottom: 2px solid #333;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.5);
+    position: relative;
+    overflow: hidden;
+    animation: slideDown 1s ease-out;
+    border-radius: 0 0 15px 15px;
+  }
+
+  header img {
+    height: 60px;
+    border-radius: 10px;
+    animation: fadeIn 1.5s ease-in-out;
+    transition: transform 0.3s ease;
+  }
+
+  header img:hover {
+    transform: scale(1.1) rotate(1deg);
+  }
+
+  header h1 {
+    font-size: 2.2rem;
+    font-weight: bold;
+    letter-spacing: 1px;
+    animation: fadeIn 1.8s ease-in-out;
+    background: linear-gradient(to right, #00ffe7, #00bfff);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+
+  @keyframes slideDown {
+    from {
+      transform: translateY(-100%);
+      opacity: 0;
+    }
+    to {
+      transform: translateY(0);
+      opacity: 1;
+    }
+  }
+
+  @keyframes fadeIn {
+    from {
+      opacity: 0;
+      transform: scale(0.9);
+    }
+    to {
+      opacity: 1;
+      transform: scale(1);
+    }
+  }
+</style>
+</header>
+    <h1>Nottmodz</h1>
+    <p class="tagline">Mods Beyond LIMIT</p>
+  </div>
+
+  <div class="search-bar">
+    <input type="text" id="searchInput" placeholder="Search Mods...">
+  </div>
+
+  <div class="app-grid" id="appList">
+    <!-- How To download Mods-->
+<div class="app-card" data-name="How to download Mods">
+  <a href="https://youtube.com/shorts/q3k_-HB0GzA?si=EDN3TYBZQjnWtpEC" target="_blank">
+    <img src="https://i.ibb.co/ynm8yxfh/vidiq-thumbnail-1.jpg" alt="How to download mods">
+  </a>
+  <div>How To download Mods</div>
+</div>
+
+<!-- How To Fix Netflix-->
+<div class="app-card" data-name="How to Fix Netflix">
+  <a href="https://youtube.com/shorts/wxMvCfXOptw?si=0SKOvpRU_fqmLRF-" target="_blank">
+    <img src="https://i.ibb.co/cSz7k22y/vidiq-thumbnail-1-1.jpg" alt="How to Fix Netflix">
+  </a>
+  <div>How To Fix Netflix</div>
+</div>
+    <!-- Prime Video -->
+<div class="app-card" data-name="Prime Video">
+  <img src="https://i.ibb.co/7x0t7zcd/Amazon-Prime-Video-logo-2024-svg.png" alt="Prime Video">
+  <div>Prime Video</div>
+  <button class="download-btn" onclick="downloadApp('https://indianshortner.in/BwGPfTi')">Download</button>
+</div>
+
+<!-- Amazon Mini TV -->
+<div class="app-card" data-name="Amazon Mini TV">
+  <img src="https://i.ibb.co/9ktbF8bs/images.jpg" alt="Amazon Mini TV">
+  <div>Amazon Mini TV</div>
+  <button class="download-btn" onclick="downloadApp('https://indianshortner.in/VH3uYCK')">Download</button>
+</div>
+
+<!-- Sony Liv -->
+<div class="app-card" data-name="Sony Liv">
+  <img src="https://i.ibb.co/GfgmSkXS/images-1.jpg" alt="Sony Liv">
+  <div>Sony Liv</div>
+  <p style="color:#00f7ff; font-size: 0.85em;">Password: 2580</p>
+  <button class="download-btn" onclick="downloadApp('https://indianshortner.in/7AufSRu')">Download</button>
+</div>
+
+<!-- Castle -->
+<div class="app-card" data-name="Castle">
+  <img src="https://i.ibb.co/6Rs5GmMs/images-2.jpg" alt="Castle">
+  <div>Castle</div>
+  <button class="download-btn" onclick="downloadApp('https://indianshortner.in/7AufSRu')">Download</button>
+</div>
+
+<!-- Kuku FM -->
+<div class="app-card" data-name="Kuku FM">
+  <img src="https://i.ibb.co/gFX4Y4dH/images-3.jpg" alt="Kuku FM">
+  <div>Kuku FM</div>
+  <button class="download-btn" onclick="downloadApp('https://indianshortner.in/k3Yb5ZjF')">Download</button>
+</div>
+
+<!-- Snaptube -->
+<div class="app-card" data-name="Snaptube">
+  <img src="https://i.ibb.co/HLskwsNW/Snaptube-Logo.png" alt="Snaptube">
+  <div>Snaptube</div>
+  <button class="download-btn" onclick="downloadApp('https://indianshortner.in/Pq1T3i')">Download</button>
+</div>
+
+<!-- Netflix -->
+<div class="app-card" data-name="Netflix">
+  <img src="https://i.ibb.co/9m1FbTqG/images.png" alt="Netflix">
+  <div>Netflix</div>
+  <button class="download-btn" onclick="downloadApp('https://indianshortner.in/TznZ1ZBS')">Download</button>
+</div>
+
+<!-- Physics Wallah -->
+<div class="app-card" data-name="Physics Wallah">
+  <img src="https://i.ibb.co/bgzkhVCR/images-4.jpg" alt="Physics Wallah">
+  <div>Physics Wallah</div>
+  <button class="download-btn" onclick="downloadApp('https://indianshortner.in/gLntEa')">Download 1</button>
+  <button class="download-btn" onclick="downloadApp('https://indianshortner.in/4ggg')">Download 2</button>
+</div>
+
+<!-- Istreamflare -->
+<div class="app-card" data-name="Istreamflare">
+  <img src="https://i.ibb.co/8L99vKxL/images-5.jpg" alt="Istreamflare">
+  <div>Istreamflare</div>
+  <button class="download-btn" onclick="downloadApp('https://indianshortner.in/VSQ7')">Download</button>
+</div>
+
+<!-- Truecaller -->
+<div class="app-card" data-name="Truecaller">
+  <img src="https://i.ibb.co/DHP36QZQ/0daa6df5e306fffca6e894f7706811ac317e8f66e2fec0030e5e39c93f444976-200.jpg" alt="Truecaller">
+  <div>Truecaller</div>
+  <button class="download-btn" onclick="downloadApp('https://indianshortner.in/UTC2Sap5')">Download</button>
+</div>
+
+<!-- Ullu -->
+<div class="app-card" data-name="Ullu">
+  <img src="https://i.ibb.co/WNyF3QJr/images.png" alt="Ullu">
+  <div>Ullu</div>
+  <button class="download-btn" onclick="downloadApp('https://indianshortner.in/BRJI')">Download</button>
+</div>
+
+<!-- Movie box -->
+<div class="app-card" data-name="Movie box">
+  <img src="https://i.ibb.co/jFTFQPt/images.jpg" alt="Movie box">
+  <div>Movie box</div>
+  <button class="download-btn" onclick="downloadApp('https://indianshortner.in/CHBQm9Mt')">Download</button>
+</div>
+
+<!-- Streamflix -->
+<div class="app-card" data-name="Streamflix">
+  <img src="https://i.ibb.co/GfvF0dz7/images-1.png" alt="Streamflix">
+  <div>Streamflix</div>
+  <button class="download-btn" onclick="downloadApp('https://indianshortner.in/FOWxeT')">Download</button>
+</div>
+
+<!-- Spotify -->
+<div class="app-card" data-name="Spotify">
+  <img src="https://i.ibb.co/ymwzdf2D/images-2.png" alt="Spotify">
+  <div>Spotify</div>
+  <button class="download-btn" onclick="downloadApp('https://indianshortner.in/bRPv')">Download</button>
+</div>
+
+<!-- Alt Balaji -->
+<div class="app-card" data-name="Alt Balaji">
+  <img src="https://i.ibb.co/cX8ttGyF/Altbalaji-Logo-svg.png" alt="Alt Balaji">
+  <div>Alt Balaji</div>
+  <button class="download-btn" onclick="downloadApp('https://indianshortner.in/Dy00E1t')">Download</button>
+</div>
+
+<!-- Chat Gpt -->
+<div class="app-card" data-name="Chat Gpt">
+  <img src="https://i.ibb.co/4Z5zKHYP/images-1.jpg" alt="Chat Gpt">
+  <div>Chat Gpt</div>
+  <button class="download-btn" onclick="downloadApp('https://indianshortner.in/q9p2n')">Download</button>
+</div>
+
+<!-- Crickbuzz -->
+<div class="app-card" data-name="Crickbuzz">
+  <img src="https://i.ibb.co/TDBHYrdL/images-2.jpg" alt="Crickbuzz">
+  <div>Crickbuzz</div>
+  <button class="download-btn" onclick="downloadApp('https://indianshortner.in/JEW5')">Download</button>
+</div>
+
+<!-- Sportz X -->
+<div class="app-card" data-name="Sportz X">
+  <img src="https://i.ibb.co/d0YmpXZ8/unnamed.webp" alt="Sportz X">
+  <div>Sportz X</div>
+  <button class="download-btn" onclick="downloadApp('https://indianshortner.in/WRa5')">Download</button>
+</div>
+
+<!-- CHAUPAL -->
+<div class="app-card" data-name="CHAUPAL">
+  <img src="https://i.ibb.co/0pDhTLVP/images-3.jpg" alt="CHAUPAL">
+  <div>CHAUPAL</div>
+  <button class="download-btn" onclick="downloadApp('https://indianshortner.in/3izD')">Download</button>
+</div>
+
+<!-- Jio Tv -->
+<div class="app-card" data-name="Jio Tv">
+  <img src="https://i.ibb.co/C3tLmKJs/Jio-TV-logo-svg.png" alt="Jio Tv">
+  <div>Jio Tv</div>
+  <button class="download-btn" onclick="downloadApp('https://indianshortner.in/Qyrgcm')">Download</button>
+</div>
+
+<!-- Jio hotstar -->
+<div class="app-card" data-name="Jio hotstar">
+  <img src="https://i.ibb.co/jZ8C4Q4s/images-4.jpg" alt="Jio hotstar">
+  <div>Jio hotstar</div>
+  <button class="download-btn" onclick="downloadApp('https://indianshortner.in/eIVh')">Download</button>
+</div>
+
+<!-- OTT play -->
+<div class="app-card" data-name="OTT play">
+  <img src="https://i.ibb.co/jPR2kB06/images-5.jpg" alt="OTT play">
+  <div>OTT play</div>
+  <button class="download-btn" onclick="downloadApp('https://indianshortner.in/sJCS')">Download</button>
+</div>
+
+<!-- Telegram -->
+<div class="app-card" data-name="Telegram">
+  <img src="https://i.ibb.co/cSjTd53v/Telegram-logo-svg.png" alt="Telegram">
+  <div>Telegram</div>
+  <button class="download-btn" onclick="downloadApp('https://indianshortner.in/Kii0WOcq')">Download</button>
+</div>
+
+<!-- Flix fox -->
+<div class="app-card" data-name="Flix fox">
+  <img src="https://i.ibb.co/RGhHrh6k/images-6.jpg" alt="Flix fox">
+  <div>Flix fox</div>
+  <button class="download-btn" onclick="downloadApp('https://indianshortner.in/pamYRlv')">Download</button>
+</div>
+
+<!-- GoHd -->
+<div class="app-card" data-name="GoHd">
+  <img src="https://i.ibb.co/fVnnhN4w/IMG-20250416-122625-702.jpg" alt="GoHd">
+  <div>GoHd</div>
+  <button class="download-btn" onclick="downloadApp('https://indianshortner.in/o2N0Ll')">Download</button>
+</div>
+
+<!-- Vedu -->
+<div class="app-card" data-name="Vedu">
+  <img src="https://i.ibb.co/zW0s8V9m/images-7.jpg" alt="Vedu">
+  <div>Vedu</div>
+  <button class="download-btn" onclick="downloadApp('https://indianshortner.in/V45p1WZ2')">Download</button>
+</div>
+
+<!-- Zeeflix -->
+<div class="app-card" data-name="Zeeflix">
+  <img src="https://i.ibb.co/6J0VcbnF/images-3.png" alt="Zeeflix">
+  <div>Zeeflix</div>
+  <button class="download-btn" onclick="downloadApp('https://indianshortner.in/C181')">Download</button>
+</div>
+
+<!-- Filmora -->
+<div class="app-card" data-name="Filmora">
+  <img src="https://i.ibb.co/TMcpydYg/Wondershare-filmora-logo-svg.png" alt="Filmora">
+  <div>Filmora</div>
+  <button class="download-btn" onclick="downloadApp('https://indianshortner.in/bxTA')">Download</button>
+</div>
+
+<!-- Discovery+ -->
+<div class="app-card" data-name="Discovery+">
+  <img src="https://i.ibb.co/R1ZmyG3/images-8.jpg" alt="Discovery+">
+  <div>Discovery+</div>
+  <button class="download-btn" onclick="downloadApp('https://indianshortner.in/mbqZn87t')">Download</button>
+</div>
+
+<!-- Crunchyroll -->
+<div class="app-card" data-name="Crunchyroll">
+  <img src="https://i.ibb.co/RGj2vwLZ/images-4.png" alt="Crunchyroll">
+  <div>Crunchyroll</div>
+  <button class="download-btn" onclick="downloadApp('https://indianshortner.in/8FunynL')">Download</button>
+</div>
+
+<!-- Grok Ai -->
+<div class="app-card" data-name="Grok Ai">
+  <img src="https://i.ibb.co/G4sxMRJ0/images-5.png" alt="Grok Ai">
+  <div>Grok Ai</div>
+  <button class="download-btn" onclick="downloadApp('https://indianshortner.in/dvOSw1V')">Download</button>
+</div>
+  </div>
+
+  <!-- Bot Floating Button -->
+  <button class="bot-btn" onclick="toggleBot()">💬</button>
+
+  <!-- Bot Popup -->
+  <div class="bot-popup" id="botPopup">
+    <button onclick="openWhatsApp('Request For New Mod')">Request For New Mod</button>
+    <button onclick="openWhatsApp('Request For Mod Update')">Request For Mod Update</button>
+  </div>
+
+  <script>
+    // Search
+    document.getElementById("searchInput").addEventListener("keyup", function() {
+      const value = this.value.toLowerCase();
+      document.querySelectorAll(".app-card").forEach(card => {
+        const name = card.getAttribute("data-name").toLowerCase();
+        card.style.display = name.includes(value) ? "block" : "none";
+      });
+    });
+
+    // Open Download in Chrome
+    function downloadApp(link) {
+      window.open(link, '_blank');
+    }
+
+    // Notification
+    if ("Notification" in window && Notification.permission !== "granted") {
+      Notification.requestPermission().then(permission => {
+        if (permission === "granted") {
+          new Notification("Nottmodz", {
+            body: "You’ll now get updates when we add new apps!",
+            icon: "https://your-logo-link.com/icon.png"
+          });
+        }
+      });
+    }
+
+    // Bot Functions
+    function toggleBot() {
+      const popup = document.getElementById("botPopup");
+      popup.style.display = popup.style.display === "block" ? "none" : "block";
+    }
+
+    function openWhatsApp(message) {
+      const encodedMsg = encodeURIComponent(message);
+      const url = `https://wa.me/919499473347?text=${encodedMsg}`;
+      window.open(url, '_blank');
+    }
+  </script>
+</body>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Slide Menu</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Segoe UI', sans-serif;
+    }
+
+    .menu-button {
+      position: fixed;
+      top: 15px;
+      right: 20px;
+      z-index: 1001;
+      background: #000;
+      border: none;
+      padding: 10px 12px;
+      border-radius: 8px;
+      cursor: pointer;
+    }
+
+    .menu-button span {
+      display: block;
+      width: 25px;
+      height: 3px;
+      background: #fff;
+      margin: 5px 0;
+      transition: 0.4s;
+    }
+
+    .sidebar {
+      height: 100%;
+      width: 0;
+      position: fixed;
+      top: 0;
+      right: 0;
+      background-color: #111;
+      overflow-x: hidden;
+      transition: 0.4s;
+      padding-top: 60px;
+      z-index: 1000;
+    }
+
+    .sidebar a {
+      padding: 12px 24px;
+      text-decoration: none;
+      font-size: 18px;
+      color: #f1f1f1;
+      display: block;
+      transition: 0.3s;
+      border-bottom: 1px solid #333;
+    }
+
+    .sidebar a:hover {
+      background: #222;
+    }
+
+    .sidebar.open {
+      width: 280px;
+    }
+
+    .close-btn {
+      position: absolute;
+      top: 20px;
+      right: 25px;
+      font-size: 30px;
+      color: #fff;
+      cursor: pointer;
+    }
+  </style>
+</head>
+<style>
+    <style>
+  footer {
+    background: linear-gradient(135deg, #0072ff, #00f7ff);
+    color: #fff;
+    padding: 15px;
+    font-family: 'Segoe UI', sans-serif;
+    font-size: 13px;
+  }
+  .footer-container { display: flex; flex-wrap: wrap; justify-content: space-between; }
+  .footer-section { flex: 1 1 100%; padding: 10px; background: rgba(0,0,0,0.1); border-radius: 8px; margin: 5px 0; }
+  footer h4 { font-size: 16px; color: #f9ca24; margin-bottom: 8px; }
+  footer ul { list-style: none; padding: 0; }
+  footer a { color: #fff; text-decoration: none; }
+  footer a:hover { color: #f9ca24; }
+  .request-form input, .request-form textarea { width: 100%; padding: 8px; margin: 5px 0; border-radius: 5px; background: #333; color: #fff; font-size: 12px; }
+  .request-form button { background: #f9ca24; color: #000; padding: 8px 15px; border: none; border-radius: 5px; cursor: pointer; }
+  .request-form button:hover { background: #e1b907; }
+  .footer-bottom { text-align: center; font-size: 12px; opacity: 0.8; margin-top: 15px; }
+  @media (max-width: 768px) {
+    .footer-container { flex-direction: column; align-items: center; text-align: center; }
+    .footer-section { flex: 1 1 auto; }
+  }
+</style>
+
+<footer>
+  <div class="footer-container">
+    <div class="footer-section">
+      <h4>Quick Links</h4>
+      <ul>
+        <li><a href="/">Home</a></li>
+        <li><a href="#privacy-policy">Privacy Policy</a></li>
+      </ul>
+    </div>
+    <div class="footer-section">
+      <h4>Contact</h4>
+      <ul>
+        <li>Email: <a href="mailto:jatinhelpline89@gmail.com">jatinhelpline89@gmail.com</a></li>
+        <li>Address: Connaught Place, Delhi</li>
+      </ul>
+    </div>
+    <div class="footer-section">
+      <h4>Social Links</h4>
+      <ul>
+        <li><a href="https://www.instagram.com/noturjatin">Instagram</a></li>
+        <li><a href="https://t.me/nottmodz">Telegram</a></li>
+        <li><a href="https://youtube.com/@jatinrao">YouTube</a></li>
+        <li><a href="https://github.com/NOTTMODZ">GitHub</a></li>
+      </ul>
+    </div>
+    <div class="footer-section">
+      <h4>Request For Update</h4>
+      <form class="request-form" action="mailto:jatinhelpline89@gmail.com">
+        <input type="text" name="name" placeholder="Your Name">
+        <textarea name="request" placeholder="Which MOD?" rows="3"></textarea>
+        <button type="submit">Submit Request</button>
+      </form>
+    </div>
+  </div>
+  <div class="footer-bottom">© 2025 Calm Team Nottmodz. All rights reserved.</div>
+</footer>
+<body>
+
+<!-- Hamburger Icon -->
+<button class="menu-button" onclick="toggleMenu()" aria-label="Toggle Menu">
+  <div class="bar"></div>
+  <div class="bar"></div>
+  <div class="bar"></div>
+</button>
+
+<!-- Sidebar -->
+<div id="mySidebar" class="sidebar">
+  <span class="close-btn" onclick="toggleMenu()">&times;</span>
+  <div class="menu-links">
+    <button onclick="window.open('https://youtube.com/shorts/q3k_-HB0GzA?si=Ss4wbyY9K9jvsgCG', '_blank')">1. How To Download Mods?</button>
+    <button onclick="window.open('https://youtube.com/shorts/wxMvCfXOptw?si=rgo9MkrjckUVOs6q', '_blank')">2. How To Use Netflix After Download?</button>
+    <button onclick="window.open('https://i.ibb.co/zhDhND3L/Picsart-25-04-16-11-54-39-804.jpg', '_blank')">3. Sony Liv Pin?</button>
+    <button onclick="window.open('https://i.ibb.co/Kjt9cBQK/Picsart-25-04-16-12-00-03-036.jpg', '_blank')">4. Prime Video Fix</button>
+    
+    <!-- Content We Provide Section -->
+    <button class="content-btn">Content We Provide</button>
+    <div id="content-we-provide">
+      <h2 style="text-align: center; color: #007bff; font-size: 2rem;">Content We Provide</h2>
+      <p style="text-align: center; font-size: 1.1rem; color: #555; margin-bottom: 20px;">At Nottmodz, we offer the most popular and highly requested MOD APKs, premium unlocked apps, and amazing features across various categories. Explore our collection below!</p>
+      <!-- Add your existing content here -->
+    </div>
+  </div>
+</div>
+
+<style>
+  :root {
+    --accent: #00c6ff;
+    --accent-hover: #0072ff;
+    --card-bg: #1e1e2f;
+  }
+
+  .menu-button {
+    position: fixed;
+    top: 15px;
+    right: 20px;
+    z-index: 1001;
+    background: var(--accent);
+    border: none;
+    cursor: pointer;
+    padding: 12px;
+    border-radius: 50%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 40px;
+    width: 40px;
+    transition: background 0.3s ease, transform 0.3s ease;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+  }
+
+  .menu-button:hover {
+    background: var(--accent-hover);
+    transform: scale(1.1);
+  }
+
+  .menu-button .bar {
+    width: 20px;
+    height: 2.5px;
+    background-color: white;
+    border-radius: 1px;
+    transition: all 0.3s ease;
+    margin: 2px auto;
+  }
+
+  .sidebar {
+    height: 100%;
+    width: 0;
+    position: fixed;
+    top: 0;
+    right: 0;
+    background: var(--card-bg);
+    overflow-x: hidden;
+    overflow-y: auto;
+    transition: width 0.4s ease;
+    padding-top: 60px;
+    z-index: 1000;
+    box-shadow: -2px 0 15px rgba(0, 0, 0, 0.5);
+  }
+
+  .sidebar.open {
+    width: 300px;
+  }
+
+  .close-btn {
+    position: absolute;
+    top: 20px;
+    right: 25px;
+    font-size: 30px;
+    color: var(--accent);
+    cursor: pointer;
+  }
+
+  .menu-links {
+    opacity: 0;
+    transform: translateX(30px);
+    transition: opacity 0.3s ease, transform 0.3s ease;
+    padding: 20px;
+    display: none;
+    flex-direction: column;
+    gap: 15px;
+  }
+
+  .sidebar.open .menu-links {
+    display: flex;
+    opacity: 1;
+    transform: translateX(0);
+  }
+
+  .menu-links button {
+    background: linear-gradient(135deg, var(--accent), var(--accent-hover));
+    border: none;
+    padding: 12px;
+    border-radius: 12px;
+    color: #12172a;
+    font-weight: bold;
+    font-size: 16px;
+    cursor: pointer;
+    transition: transform 0.2s ease, background 0.3s ease;
+  }
+
+  .menu-links button:hover {
+    transform: scale(1.05);
+    background: linear-gradient(135deg, var(--accent-hover), var(--accent));
+  }
+
+  /* Content We Provide Section Styling */
+  #content-we-provide {
+    background-color: #ffffff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  }
+
+  /* Button for showing content */
+  .content-btn {
+    background: linear-gradient(135deg, var(--accent), var(--accent-hover));
+    border: none;
+    padding: 12px;
+    border-radius: 12px;
+    color: #12172a;
+    font-weight: bold;
+    font-size: 16px;
+    cursor: pointer;
+    transition: transform 0.2s ease, background 0.3s ease;
+  }
+
+  .content-btn:hover {
+    transform: scale(1.05);
+    background: linear-gradient(135deg, var(--accent-hover), var(--accent));
+  }
+</style>
+
+<script>
+  function toggleMenu() {
+    var sidebar = document.getElementById("mySidebar");
+    sidebar.classList.toggle("open");
+
+    // Toggle hamburger animation
+    var bars = document.querySelectorAll(".menu-button .bar");
+    bars[0].classList.toggle("rotate1");
+    bars[1].classList.toggle("fade");
+    bars[2].classList.toggle("rotate2");
+  }
+</script>
+
+<script>
+// Show popup after 5 seconds
+window.addEventListener('load', function() {
+  setTimeout(function() {
+    const popup = document.getElementById('popupBanner');
+    if (popup) popup.style.display = 'block';
+  }, 5000);
+});
+  function toggleMenu() {
+    const sidebar = document.getElementById("mySidebar");
+    sidebar.classList.toggle("open");
+  }
+</script>
