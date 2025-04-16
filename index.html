@@ -1,6 +1,8 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <meta name="description" content="Download the best modded apps and entertainment tools from Nottmodz. Updated mods, tutorials, and support!" />
   <meta name="keywords" content="mod apps, nottmodz, free mods, download modded apps, netflix mod, prime video mod" />
   <meta name="author" content="Nottmodz Team" />
@@ -11,6 +13,7 @@
   <meta property="og:url" content="https://nottmodz.github.io" />
   <meta name="twitter:card" content="summary_large_image" />
   <link rel="canonical" href="https://nottmodz.github.io" />
+  <title>Nottmodz - Mods Beyond LIMIT</title>
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
@@ -20,7 +23,11 @@
     "description": "Free mod apps and tools for all your entertainment needs."
   }
   </script>
-
+</head>
+<body>
+<!DOCTYPE html>
+<html lang="en">
+<head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Nottmodz - Mods Beyond LIMIT</title>
@@ -505,53 +512,10 @@
       window.open(url, '_blank');
     }
   </script>
-
-<script>
-  const apps = document.querySelectorAll('.app-card');
-  apps.forEach((card) => {
-    const name = card.getAttribute('data-name') || 'Mod App';
-    const img = card.querySelector('img');
-    const imageUrl = img ? img.src : '';
-    const structuredData = {
-      "@context": "https://schema.org",
-      "@type": "SoftwareApplication",
-      "name": name,
-      "operatingSystem": "Android",
-      "applicationCategory": "Entertainment",
-      "image": imageUrl,
-      "url": window.location.href
-    };
-    const script = document.createElement('script');
-    script.type = 'application/ld+json';
-    script.textContent = JSON.stringify(structuredData);
-    document.head.appendChild(script);
-  });
-</script>
-
 </body>
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta name="description" content="Download the best modded apps and entertainment tools from Nottmodz. Updated mods, tutorials, and support!" />
-  <meta name="keywords" content="mod apps, nottmodz, free mods, download modded apps, netflix mod, prime video mod" />
-  <meta name="author" content="Nottmodz Team" />
-  <meta name="robots" content="index, follow" />
-  <meta property="og:title" content="Nottmodz - Mods Beyond LIMIT" />
-  <meta property="og:description" content="Get free access to modded apps, premium tools and more!" />
-  <meta property="og:image" content="https://nottmodz.github.io/preview.jpg" />
-  <meta property="og:url" content="https://nottmodz.github.io" />
-  <meta name="twitter:card" content="summary_large_image" />
-  <link rel="canonical" href="https://nottmodz.github.io" />
-  <script type="application/ld+json">
-  {
-    "@context": "https://schema.org",
-    "@type": "WebSite",
-    "name": "Nottmodz",
-    "url": "https://nottmodz.github.io",
-    "description": "Free mod apps and tools for all your entertainment needs."
-  }
-  </script>
-
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Slide Menu</title>
@@ -639,4 +603,86 @@
     <button onclick="window.open('https://youtube.com/shorts/q3k_-HB0GzA?si=Ss4wbyY9K9jvsgCG', '_blank')">1. How To Download Mods?</button>
     <button onclick="window.open('https://youtube.com/shorts/wxMvCfXOptw?si=rgo9MkrjckUVOs6q', '_blank')">2. How To Use Netflix After Download?</button>
     <button onclick="window.open('https://i.ibb.co/zhDhND3L/Picsart-25-04-16-11-54-39-804.jpg', '_blank')">3. Sony Liv Pin?</button>
-    <button onclick="window.open('https://i.ibb.co/Kjt9cBQ
+    <button onclick="window.open('https://i.ibb.co/Kjt9cBQK/Picsart-25-04-16-12-00-03-036.jpg', '_blank')">4. Prime Video Fix</button>
+  </div>
+</div>
+
+<style>
+  :root {
+    --accent: #00c6ff;
+    --accent-hover: #0072ff;
+    --card-bg: #1e1e2f;
+  }
+
+  .menu-button {
+    position: fixed;
+    top: 15px;
+    right: 20px;
+    z-index: 1001;
+    background: var(--accent);
+    border: none;
+    cursor: pointer;
+    padding: 12px;
+    border-radius: 50%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 40px;
+    width: 40px;
+    transition: background 0.3s ease, transform 0.3s ease;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+  }
+
+  .menu-button:hover {
+    background: var(--accent-hover);
+    transform: scale(1.1);
+  }
+
+  .menu-button .bar {
+    width: 20px;
+    height: 2.5px;
+    background-color: white;
+    border-radius: 1px;
+    transition: all 0.3s ease;
+    margin: 2px auto;
+  }
+
+  .sidebar {
+    height: 100%;
+    width: 0;
+    position: fixed;
+    top: 0;
+    right: 0;
+    background: var(--card-bg);
+    overflow-x: hidden;
+    overflow-y: auto;
+    transition: width 0.4s ease;
+    padding-top: 60px;
+    z-index: 1000;
+    box-shadow: -2px 0 15px rgba(0, 0, 0, 0.5);
+  }
+
+  .sidebar.open {
+    width: 300px;
+  }
+
+  .close-btn {
+    position: absolute;
+    top: 20px;
+    right: 25px;
+    font-size: 30px;
+    color: var(--accent);
+    cursor: pointer;
+  }
+
+  .menu-links {
+    opacity: 0;
+    transform: translateX(30px);
+    transition: opacity 0.3s ease, transform 0.3s ease;
+    padding: 20px;
+    display: none;
+    flex-direction: column;
+    gap: 15px;
+  }
+
+  .sidebar.op
