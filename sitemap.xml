@@ -2,7 +2,9 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
     <loc>https://nottmodz.github.io/</loc>
-    <lastmod>2025-04-16</lastmod>
-    <priority>1.00</priority>
   </url>
+  <url>
+    <loc>https://nottmodz.github.io/fyq.html</loc>
+  </url>
+  <!-- aur bhi pages ho toh add karo -->
 </urlset>
